@@ -1,0 +1,49 @@
+$color-principal: #363636;
+$color-txt: #ffffff;
+$color-dorado: #D9C19F;
+$color-input-border: #ffffff;
+$color-avatar : red;
+
+ul{
+  background-color: $color-dorado;
+  display: block;
+  padding: 0px;
+}
+
+header{
+  background-color: rgb(231, 231, 231);
+
+}
+
+header .logo{
+  margin: 0;
+  padding: 25px 30px;
+  font-weight: bold;
+  color: rgb(6, 119, 156);
+  font-size: 1.6em;
+}
+
+header .container{
+  display: flex;
+  //flex-direction: column;
+  align-items: center;
+
+}
+
+header nav{
+  display: flex;
+  //flex-direction: column;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+header a{
+  padding: 5px 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+header a:hover{
+  color:  rgb(6, 119, 156);
+}
