@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './public/components/header/header.component';
 import { NewContactComponent } from './public/pages/new-contact/new-contact.component';
-import { ContactCardComponent } from './public/component/contact-card/contact-card.component';
+import { ContactCardComponent } from './public/components/contact-card/contact-card.component';
 
 @NgModule({
   declarations: [
