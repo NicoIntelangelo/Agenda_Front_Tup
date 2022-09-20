@@ -11,8 +11,7 @@ import { ContactCardComponent } from './public/components/contact-card/contact-c
   declarations: [
     AppComponent,
     HeaderComponent,
-    NewContactComponent,
-    ContactCardComponent
+    NewContactComponent
   ],
   imports: [
     BrowserModule,
