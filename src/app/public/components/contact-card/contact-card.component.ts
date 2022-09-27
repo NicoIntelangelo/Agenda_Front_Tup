@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Contact, defaultContact } from 'src/app/interfaces/contactData';
 
 @Component({
   selector: 'app-contact-card',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-card.component.scss']
 })
 export class ContactCardComponent implements OnInit {
+
+  @Input() Contact:Contact = defaultContact
 
   constructor() { }
 
