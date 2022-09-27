@@ -8,7 +8,7 @@ import { Contact, defaultContact } from 'src/app/interfaces/contactData';
 })
 export class ContactCardComponent implements OnInit {
 
-  @Input() Contact:Contact = defaultContact
+  @Input() contact:Contact = defaultContact
 
   constructor() { }
 
