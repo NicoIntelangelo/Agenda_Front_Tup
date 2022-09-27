@@ -7,15 +7,19 @@
 //     ip_address: string;
 // }
 
-// CONTACTOS DE PRUEBA INSTANCIADOS EN ASSETS MOCK DATA
+
 export interface Contact {
   firstName: string,
   lastName: string,
   phoneNumber: string,
+  email: string,
+  descripcion: string
 }
 
 export const defaultContact:Contact = {
   firstName: "First name",
   lastName: "Last Name",
-  phoneNumber: "+5412345678"
+  phoneNumber: "+5412345678",
+  email: "aiuhfueah@gmail.com",
+  descripcion: "kahfuahfue"
 }
