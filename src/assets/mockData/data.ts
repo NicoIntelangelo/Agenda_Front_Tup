@@ -1,4 +1,4 @@
-import { Andrea, Candice, Catherine, Christopher, Contact, defaultContact, Eric, Richard } from "src/app/interfaces/contactData";
+import { Andrea, Brian, Candice, Catherine, Christopher, Contact, defaultContact, Eric, Nancy, Richard } from "src/app/interfaces/contactData";
 
 export const contactsData:Contact[] = [
     defaultContact,
@@ -8,5 +8,6 @@ export const contactsData:Contact[] = [
     Richard,
     Christopher,
     Andrea,
-    
+    Nancy,
+    Brian,
 ]

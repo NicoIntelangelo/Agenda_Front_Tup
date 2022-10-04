@@ -80,3 +80,21 @@ export const Andrea:Contact ={
   descripcion: "Friend",
   //avatar:"https://mmoapi.com/static/images/avatar/women/17.jpg"
 }
+
+export const Nancy:Contact ={
+  firstName: "Nancy",
+  lastName: "Stokes",
+  phoneNumber: "093-036-0196",
+  email: "schavez@kim.org",
+  descripcion: "Friend",
+  //avatar:"https://mmoapi.com/static/images/avatar/women/21.jpg"
+}
+
+export const Brian:Contact ={
+  firstName: "Brian",
+  lastName: "Torres",
+  phoneNumber: "1-227-905-2142",
+  email: "cassidytran@cole.com",
+  descripcion: "Friend",
+  //avatar:"https://mmoapi.com/static/images/avatar/men/52.jpg"
+}
