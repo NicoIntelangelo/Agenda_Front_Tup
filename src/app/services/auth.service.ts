@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BACKEND_URL } from '../constants/backend';
+import { BACKEND_URL } from '../constants/backends';
 import { iAuthRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
 
