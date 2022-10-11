@@ -84,16 +84,16 @@ header a:hover{
   flex-direction: column;
   height: 100vh;
   color: rgb(245, 245, 245);
-  background-color: black;
+  background-color: rgb(15, 93, 118);
   background-image: linear-gradient(
       0deg,
       rgba(0,0,0,0.5),
       rgba(0,0,0,0.5)
   )
-  ,url("Images\Blue-Icon.png");
+  ,url("Images/Blue-Icon.png");
 }
 #hero h1{
-  font-size: 2.5em;
+  font-size: 2em;
 }
 
 // #SomosFCIContact{
@@ -172,5 +172,40 @@ footer .container{
     height: 300px;
     width: 500px;
   }
+  // #hero{
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   text-align: center;
+  //   flex-direction: column;
+  //   height: 94.5vh;
+  //   width: 125vh;
+  //   color: rgb(245, 245, 245);
+  //   background-color: rgb(15, 93, 118);
+  //   // background-image: linear-gradient(
+  //   //     0deg,
+  //   //     rgba(0,0,0,0.5),
+  //   //     rgba(0,0,0,0.5)
+  //   // )
+  //   // ,url("Images\Blue-Icon.png");
+  //}
+  // #hero .img-inicio-sesion{
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   background-size: cover;
+  //   background-position: center center;
+  //   background-image: linear-gradient(
+  //       0deg,
+  //       rgba(0,0,0,0.5),
+  //       rgba(0,0,0,0.5)
+  //   )
+  //   ,url("Images\Blue-Icon.png");
+    
+  // }
+  // #hero .container-img{
+  //   background-color: rgb(15, 93, 118);
+  // }
 
 }
