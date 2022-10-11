@@ -17,7 +17,7 @@ export interface Contact {
   phoneNumber: string,
   email: string,
   descripcion: string,
-  //avatar: string
+  avatar: string
 }
 
 export const defaultContact:Contact = {
@@ -26,7 +26,7 @@ export const defaultContact:Contact = {
   phoneNumber: "646.995.2215x5795",
   email: "simonsdavid@flowers.biz",
   descripcion: "Work Mate",
-  //avatar: ("https://mmoapi.com/static/images/avatar/men/57.jpg"),
+  avatar: "https://mmoapi.com/static/images/avatar/men/57.jpg",
 }
 
 export const Eric:Contact = {
@@ -35,7 +35,7 @@ export const Eric:Contact = {
   phoneNumber: "962.134.2344x8959",
   email: "perezfernando@miller.com",
   descripcion: "Family",
-  //avatar: "https://mmoapi.com/static/images/avatar/men/23.jpg",
+  avatar: "https://mmoapi.com/static/images/avatar/men/23.jpg",
 }
 
 export const Catherine:Contact = {
@@ -44,7 +44,7 @@ export const Catherine:Contact = {
   phoneNumber: "864-920-3744",
   email: "garyriley@nelson-orr.com",
   descripcion: "Friend",
-  //avatar: "https://mmoapi.com/static/images/avatar/women/67.jpg"
+  avatar: "https://mmoapi.com/static/images/avatar/women/67.jpg"
 }
 
 export const Candice:Contact = {
@@ -53,7 +53,7 @@ export const Candice:Contact = {
   phoneNumber: "1-953-394-2490x75771",
   email: "fjones@lee.net",
   descripcion: "Friend",
-  //avatar:"https://mmoapi.com/static/images/avatar/women/56.jpg"
+  avatar:"https://mmoapi.com/static/images/avatar/women/56.jpg"
 }
 
 export const Richard:Contact ={
@@ -62,7 +62,7 @@ export const Richard:Contact ={
   phoneNumber: "(969)640-1486x9089",
   email: "josejackson@yahoo.com",
   descripcion: "Friend",
-  //avatar:"https://mmoapi.com/static/images/avatar/men/84.jpg",
+  avatar:"https://mmoapi.com/static/images/avatar/men/84.jpg",
 }
 export const Christopher:Contact ={
   firstName: "Christopher",
@@ -70,7 +70,7 @@ export const Christopher:Contact ={
   phoneNumber: "(875)637-8673x533",
   email: "kingdevin@costa.com",
   descripcion: "Work Mate",
-  //avatar:"https://mmoapi.com/static/images/avatar/men/86.jpg",
+  avatar:"https://mmoapi.com/static/images/avatar/men/86.jpg",
 }
 export const Andrea:Contact ={
   firstName: "Andrea",
@@ -78,7 +78,7 @@ export const Andrea:Contact ={
   phoneNumber: "409-340-0165",
   email: "paulreyes@gmail.com",
   descripcion: "Friend",
-  //avatar:"https://mmoapi.com/static/images/avatar/women/17.jpg"
+  avatar:"https://mmoapi.com/static/images/avatar/women/17.jpg"
 }
 
 export const Nancy:Contact ={
@@ -87,7 +87,7 @@ export const Nancy:Contact ={
   phoneNumber: "093-036-0196",
   email: "schavez@kim.org",
   descripcion: "Friend",
-  //avatar:"https://mmoapi.com/static/images/avatar/women/21.jpg"
+  avatar:"https://mmoapi.com/static/images/avatar/women/21.jpg"
 }
 
 export const Brian:Contact ={
@@ -96,5 +96,5 @@ export const Brian:Contact ={
   phoneNumber: "1-227-905-2142",
   email: "cassidytran@cole.com",
   descripcion: "Friend",
-  //avatar:"https://mmoapi.com/static/images/avatar/men/52.jpg"
+  avatar:"https://mmoapi.com/static/images/avatar/men/52.jpg"
 }
