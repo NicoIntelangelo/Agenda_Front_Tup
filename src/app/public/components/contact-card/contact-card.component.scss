@@ -25,8 +25,9 @@
   height: 80px;
   width: 80px;
   margin: 20px 10px 10px 0;
-  //background-color: white;
-  background-image: url(../contact-card/Images/Icon-Contact-Blue.png)
+}
+.profile-picture img{
+  position: center;
 }
 
 .card-dialog > p {
@@ -36,4 +37,13 @@
 .card-dialog:active {
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.664);
   transition-delay: 0s;
+// }
+// .card-dialog img{
+//   position: center;
 }
+// img{
+//   position: relative;
+//   right: 91px;
+//   width: 80px;
+//   top: 20px;
+// }
