@@ -1,17 +1,9 @@
-$color-principal: #363636;
-$color-txt: #ffffff;
-$color-dorado: #D9C19F;
-$color-input-border: #ffffff;
-$color-avatar : red;
-
-ul{
-  background-color: $color-dorado;
-  display: block;
-  padding: 0px;
-}
+$color-blanco : rgb(231,232,227);
+$color-verde: rgb(108,153,138);
+$tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 header{
-  background-color: rgb(139, 209, 233);
+  background-color: $color-blanco;
 
 }
 
@@ -19,8 +11,8 @@ header .logo{
   margin: 0;
   padding: 25px 30px;
   font-weight: bold;
-  color: rgb(6, 119, 156);
-  font-size: 1.6em;
+  color: $color-verde;
+  font-size: 2em;
 }
 
 header .container{
@@ -40,10 +32,13 @@ header nav{
 header a{
   padding: 5px 12px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight:lighter;
   color: black;
+  font-family: $tipografia-1;
+  font-size: 1.1em;
 }
 
 header a:hover{
-  color:  rgb(6, 119, 156);
+  color:  $color-verde;
 }
+
