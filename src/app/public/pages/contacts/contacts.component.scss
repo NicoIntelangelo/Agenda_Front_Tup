@@ -1,7 +1,12 @@
-body{
+$color-blanco : rgb(231,232,227);
+$color-verde: rgb(108,153,138);
+$tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+#container{
     background-color: lightblue;
 }
 
 h1{
     text-align: center;
+    font-family: $tipografia-1;
 }

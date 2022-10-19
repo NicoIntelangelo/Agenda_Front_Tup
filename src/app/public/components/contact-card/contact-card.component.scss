@@ -1,3 +1,8 @@
+$color-blanco : rgb(231,232,227);
+$color-verde: rgb(108,153,138);
+$tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
 
 #main-contacts {
   margin: 10px 0px 10px 9px;
@@ -7,7 +12,7 @@
   width: 350px;
   //height: 200px;
   vertical-align: top;
-  background-color: lightblue;
+  background-color: $color-blanco;
   //background-image: url(../contact-card/Images/McLovin2.jfif);
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
   margin: 10px;
@@ -19,7 +24,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  flex-direction: column; 
+  flex-direction: column;
   float: left;
   border: solid 1px;
   height: 80px;
