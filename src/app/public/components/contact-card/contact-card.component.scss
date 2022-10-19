@@ -1,4 +1,4 @@
-$color-blanco : rgb(231,232,227);
+$color-blanco : rgb(239, 240, 234);
 $color-verde: rgb(108,153,138);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
@@ -6,14 +6,13 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 
 #main-contacts {
   margin: 10px 0px 10px 9px;
+  display:inline-flex;
 }
 .card-dialog {
   float: left;
   width: 350px;
-  //height: 200px;
   vertical-align: top;
   background-color: $color-blanco;
-  //background-image: url(../contact-card/Images/McLovin2.jfif);
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
   margin: 10px;
   padding: 10px 20px 10px 20px;
@@ -26,26 +25,40 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   text-align: center;
   flex-direction: column;
   float: left;
-  border: solid 1px;
+  border: solid 3px;
   height: 80px;
   width: 80px;
   margin: 20px 10px 10px 0;
+  border-color: $color-verde;
 }
 .profile-picture img{
   position: center;
 }
 
-.card-dialog > p {
+.card-dialog  p {
   margin-left: 100px;
+  font-family: $tipografia-1;
+  font-weight: lighter;
+  font-size: 14px;
 }
 
+.card-dialog h3{
+  margin-left: 100px;
+  font-family: $tipografia-1;
+  font-weight:bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+
 .card-dialog:active {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.664);
+  box-shadow: 0 8px 17px 0 rgba(108,153,138, 0.664);
   transition-delay: 0s;
-// }
+}
+
 // .card-dialog img{
 //   position: center;
-}
+//}
 // img{
 //   position: relative;
 //   right: 91px;
