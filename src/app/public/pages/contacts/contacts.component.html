@@ -1,10 +1,12 @@
-<body>
+<div id="container">
+
   <h1>Lista de Contactos</h1>
 
   <app-contact-card
-    *ngFor="let contact of contactsData"
-    [contact]= "contact"
-    >
-  </app-contact-card>  
-</body>
+  *ngFor="let contact of contactsData"
+  [contact]= "contact"
+  >
+</app-contact-card>
+</div>
+
 
