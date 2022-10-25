@@ -13,7 +13,6 @@ import { HeaderAgendaComponent } from './public/components/header-agenda/header-
     AppComponent,
     HeaderComponent,
     NewContactComponent,
-    HeaderAgendaComponent
   ],
   imports: [
     BrowserModule,
