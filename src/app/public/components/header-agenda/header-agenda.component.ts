@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderAgendaComponent implements OnInit {
 
+  agenda:string[]=["Agenda 1","Agenda 2","Agenda 3","Agenda 4"];
+
+  agendaSeleccionada:string = "";
+
   constructor() { }
 
   ngOnInit(): void {

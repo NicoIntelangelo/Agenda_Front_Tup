@@ -1,1 +1,3 @@
-<p>header-agenda works!</p>
+<div class="container">
+  <button class="boton" *ngFor="let item of agenda" [ngClass]="{'activa': agendaSeleccionada === item}" (click)="agendaSeleccionada = item">{{item}}</button>
+</div>
