@@ -1,6 +1,4 @@
-// *{
-//   box-sizing: border-box;
-// }
+
 $color-blanco : rgb(239, 240, 234);
 $color-verde: rgb(108,153,138);
 $color-verde2: rgb(84, 117, 106);
@@ -15,6 +13,9 @@ ul{list-style: none;}
 li{
   font-size: 1.25em;
 }
+
+
+// Boton inicio sesion
 
 button{
   font-family: $tipografia-1;
@@ -31,11 +32,8 @@ button:hover{
   background-color: $color-verde2 ;
 }
 
-.container{
-  max-width: 1400px;
-  margin: auto;
-}
 
+// HERO
 
 #hero{
   display: flex;
@@ -49,9 +47,9 @@ button:hover{
   background-color: rgb(133, 109, 109);
   background-size: cover;
   background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
   )
   ,url("Images/Blue-Icon.png");
 }
@@ -60,11 +58,11 @@ button:hover{
   font-size: 2em;
 }
 
-// #SomosFCIContact{
 
-// }
+//SOMOS FCI CONTACT
 
 .color-acento{color: rgb(6, 119, 156);}
+
 
 #SomosFCIContact .container{
   text-align: center;
@@ -72,12 +70,13 @@ button:hover{
   background-color: rgb(139, 209, 233);
 }
 
+//Caracteristicas
+
 #Caracteristicas .container{
   text-align: center;
   padding: 100px 12px;
   background-color: rgb(15, 93, 118);
 }
-
 
 #Caracteristicas li{
   margin: 16px 0px;
@@ -101,20 +100,6 @@ footer .container{
 //---------------------------------------------------------//
 
 @media (min-width: 720px){
-  // header {
-  //   position: fixed;
-  //   width: 100%;
-  // }
-  header .container{
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  header nav{
-    flex-direction: row;
-    padding-bottom: 0 ;
-    padding-right: 20px;
-
-  }
 
   #Caracteristicas .container{
     display: flex;
@@ -136,40 +121,4 @@ footer .container{
     height: 300px;
     width: 500px;
   }
-  // #hero{
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   text-align: center;
-  //   flex-direction: column;
-  //   height: 94.5vh;
-  //   width: 125vh;
-  //   color: rgb(245, 245, 245);
-  //   background-color: rgb(15, 93, 118);
-  //   // background-image: linear-gradient(
-  //   //     0deg,
-  //   //     rgba(0,0,0,0.5),
-  //   //     rgba(0,0,0,0.5)
-  //   // )
-  //   // ,url("Images\Blue-Icon.png");
-  //}
-  // #hero .img-inicio-sesion{
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   background-size: cover;
-  //   background-position: center center;
-  //   background-image: linear-gradient(
-  //       0deg,
-  //       rgba(0,0,0,0.5),
-  //       rgba(0,0,0,0.5)
-  //   )
-  //   ,url("Images\Blue-Icon.png");
-
-  // }
-  // #hero .container-img{
-  //   background-color: rgb(15, 93, 118);
-  // }
-
 }
