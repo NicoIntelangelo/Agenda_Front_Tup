@@ -1,5 +1,6 @@
 $color-blanco : rgb(239, 240, 234);
 $color-verde: rgb(108,153,138);
+$color-verde2: rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 
@@ -37,8 +38,8 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 }
 
 .card-dialog  p {
-  margin-left: 100px;
   font-family: $tipografia-1;
+  margin-left: 100px;
   font-weight: lighter;
   font-size: 14px;
 }
@@ -57,12 +58,19 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   transition-delay: 0s;
 }
 
-// .card-dialog img{
-//   position: center;
-//}
-// img{
-//   position: relative;
-//   right: 91px;
-//   width: 80px;
-//   top: 20px;
-// }
+button{
+ // display: flex;
+  font-family: $tipografia-1;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.5);
+  color: $color-blanco;
+  background-color: $color-verde;
+  margin-left: 20px;
+}
+
+button:hover{
+  background-color: $color-verde2 ;
+}
+
