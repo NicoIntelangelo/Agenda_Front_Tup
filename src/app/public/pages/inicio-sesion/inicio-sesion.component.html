@@ -10,11 +10,13 @@
   <form (ngSubmit)="login(form)" #form="ngForm">
     <div class="inputs">
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" autocomplete="email" placeholder="ingresa tu direccion de email"
+      <!-- <input type="email" name="email" id="email" autocomplete="email" placeholder="ingresa tu direccion de email"
         [(ngModel)]="authData.userName" #email="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'
-      >
+      > -->
+      <input type="email" name="email" id="email" autocomplete="email" placeholder="ingresa tu direccion de email"
+        [(ngModel)]="authData.email" #email="ngModel">
     </div>
-    <p id="mal-ingreso" *ngIf="email.touched && email.errors">Correo electrónico no válido.</p>
+    <!-- <p id="mal-ingreso" *ngIf="email.touched && email.errors">Correo electrónico no válido.</p> -->
     <div class="inputs">
       <label for="password">Password</label>
       <input type="password" name="password" id="password" autocomplete="current-password" placeholder="Ingresa tu contraseña"
