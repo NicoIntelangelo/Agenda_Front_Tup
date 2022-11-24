@@ -15,7 +15,7 @@ export class InicioSesionComponent {
 
   //Hecho usando NgModel
   authData:iAuthRequest = {
-    userName : "",
+    email : "",
     password : ""
   };
 

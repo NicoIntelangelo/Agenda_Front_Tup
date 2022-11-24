@@ -18,7 +18,7 @@ export class AuthService {
       body: JSON.stringify(authentication),
     });
     if(!res.ok) return false
-    const token = await res.text;
+    const token = await res.text();
     console.log(token)
     if (!token) return false;
     this.setSession(token);
