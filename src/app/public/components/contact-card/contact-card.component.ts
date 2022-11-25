@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Contact, defaultContact, Eric, Catherine } from 'src/app/interfaces/contactData';
+import { ContactJsonPlaceholder } from 'src/app/interfaces/contact.interface';
+import { ContactsComponent } from '../../pages/contacts/contacts.component';
+//import { Contact, defaultContact, Eric, Catherine } from 'src/app/interfaces/contactData';
 
 @Component({
   selector: 'app-contact-card',
@@ -8,9 +10,16 @@ import { Contact, defaultContact, Eric, Catherine } from 'src/app/interfaces/con
 })
 export class ContactCardComponent implements OnInit {
 
-  @Input() contact:Contact = defaultContact
+  constructor(private cs:ContactsComponent) { }
 
-  constructor() { }
+  @Input() contact:ContactJsonPlaceholder = {
+    nombre: '',
+    apellido: '',
+    mail: '',
+    telefono: '',
+    direccion: '',
+    agendaId: 0,
+  };
 
   ngOnInit(): void {
   }

@@ -9,14 +9,14 @@ import { AuthService } from './auth.service';
 export class ContactService {
   constructor(private auth:AuthService) {}
 
-  async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
-    const jsonData = await this.getContacts();
-    const contact = jsonData.filter((contact) => contact.id == id);
-    return contact.length > 0 ? contact[0] : {};
-  }
+  // async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
+  //   const jsonData = await this.getContacts();
+  //   const contact = jsonData.filter((contact) => contact.id == id);
+  //   return contact.length > 0 ? contact[0] : {};
+  // }
 
-  async getContacts(): Promise<ContactJsonPlaceholder[]> {
-    const data = await fetch('https://jsonplaceholder.typicode.com/users');
+  async getContacts(agendaId: number): Promise<ContactJsonPlaceholder[]> {
+    const data = await fetch(BACKEND_URL+'/api/Contacto/agendaContacts/'+ agendaId);
     return await data.json();
   }
 
