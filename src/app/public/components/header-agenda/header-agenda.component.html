@@ -1,3 +1,6 @@
 <div class="container">
-  <button class="boton" *ngFor="let item of agenda" [ngClass]="{'activa': agendaSeleccionada === item}" (click)="agendaSeleccionada = item">{{item}}</button>
+  <button class="boton" *ngFor="let agenda of agendas">{{agenda.nombre}} {{agenda.id}}</button>
+  <!-- <button class="boton" *ngFor="let agenda of agendas"
+    [ngClass]="{'activa': agendaSeleccionada === item}"
+      (click)="agendaSeleccionada = item">{{item}}{{agenda.nombre}}</button> -->
 </div>

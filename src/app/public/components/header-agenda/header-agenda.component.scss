@@ -10,18 +10,22 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 }
 
 .boton{
-  width: 96px;
+  width: auto;
   height:40px ;
   border: none;
   background-color: $color-verde;
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 3px;
+  padding : 3px 13px;
+  font-family: $tipografia-1;
+  color: $color-blanco;
+  font-size: 15px;
 }
 
 .boton:hover{
   background-color: $color-verde2;
-  width: 100px;
+  width: auto;
   height:46px ;
   margin-top: 0px;
 }

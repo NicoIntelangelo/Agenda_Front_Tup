@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AgendaJsonPlaceholder } from 'src/app/interfaces/agenda.interface';
+import { AgendaService } from 'src/app/services/agenda.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header-agenda',
@@ -7,13 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderAgendaComponent implements OnInit {
 
-  agenda:string[]=["Agenda 1","Agenda 2","Agenda 3","Agenda 4"];
+
+  agendas:AgendaJsonPlaceholder[] = [];
 
   agendaSeleccionada:string = "";
 
-  constructor() { }
+
+  constructor(private as:AgendaService, private auth:AuthService) { }
+
+  @Input() agenda:AgendaJsonPlaceholder = {
+    id: 0,
+    nombre: '',
+    codigo: ''
+  };
 
   ngOnInit(): void {
+    this.getDataAgendas()
+    //this.auth.getMe()
   }
+
+  async getDataAgendas(){
+    const  agendaId = localStorage.getItem("Id") || 'invalid';
+    if (agendaId !== 'invalid'){
+      this.agendas = await this.as.getAgendas(agendaId);
+    }
+    else{
+      console.log("error getDataAgendas AgendaComponent")
+    }
+  }
+
 
 }

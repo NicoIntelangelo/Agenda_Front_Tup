@@ -3,6 +3,8 @@ import { BACKEND_URL } from '../constants/backends';
 import { iAuthRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
 
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -20,8 +22,15 @@ export class AuthService {
     if(!res.ok) return false
     const token = await res.text();
     console.log(token)
+
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    const sub = decodedToken.sub;
+    console.log(sub); ///busca el id del usuario
+
     if (!token) return false;
     this.setSession(token);
+    this.setUserId(sub); //guarda el id en el local storage
     return true;
   }
 
@@ -36,6 +45,11 @@ export class AuthService {
       return JSON.parse(item);
     }
     return { expiresIn: '', token: '' };
+  }
+
+
+  setUserId(id : string){//**************
+    localStorage.setItem('Id', id);
   }
 
   setSession(token: any, expiresTimeHours: number = 24) {
@@ -65,4 +79,8 @@ export class AuthService {
     this.loggedIn = false;
     window.location.reload();
   }
+
+
 }
+
+
