@@ -7,11 +7,13 @@ import { HeaderComponent } from './public/components/header/header.component';
 import { NewContactComponent } from './public/pages/new-contact/new-contact.component';
 import { ContactCardComponent } from './public/components/contact-card/contact-card.component';
 import { HeaderAgendaComponent } from './public/components/header-agenda/header-agenda.component';
+import { RegistrarseComponent } from './public/pages/registrarse/registrarse.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    //RegistrarseComponent,
     //NewContactComponent,
   ],
   imports: [
