@@ -16,6 +16,9 @@ import { HeaderAgendaComponent } from '../../components/header-agenda/header-age
   imports: [
     CommonModule,
     contactsRoutingModule
+  ],
+  exports:[
+    HeaderAgendaComponent
   ]
 })
 export class ContactsModule { }
