@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BACKEND_URL } from '../constants/backends';
-import { iAuthRequest } from '../interfaces/auth';
+import { iAuthRequest, iRegisterRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
 
 import { JwtHelperService } from '@auth0/angular-jwt'; //npm install @auth0/angular-jwt
@@ -34,10 +34,23 @@ export class AuthService {
     return true;
   }
 
+  async addUser(user: iRegisterRequest) {  //: Promise<ContactJsonPlaceholder>
+    console.log(user);
+    const res = await fetch(BACKEND_URL+'/api/authentication/newuser', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    return await res.json();
+    // console.log(res.json())
+  }
+
+
   isLoggedIn(){
     return this.loggedIn;
   }
-
 
   getSession(): ISession {
     const item: string = localStorage.getItem('session') || 'invalid';
