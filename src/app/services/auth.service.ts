@@ -42,6 +42,7 @@ export class AuthService {
   getSession(): ISession {
     const item: string = localStorage.getItem('session') || 'invalid';
     if (item !== 'invalid') {
+      this.loggedIn = true;
       return JSON.parse(item);
     }
     return { expiresIn: '', token: '' };
@@ -61,6 +62,7 @@ export class AuthService {
       token,
     };
 
+    this.loggedIn = true;
     localStorage.setItem('session', JSON.stringify(session));
     //window.location.reload();
   }
@@ -76,8 +78,9 @@ export class AuthService {
 
   resetSession() {
     localStorage.removeItem('session');
+    localStorage.removeItem('Id');
     this.loggedIn = false;
-    window.location.reload();
+    //window.location.reload();
   }
 
 
