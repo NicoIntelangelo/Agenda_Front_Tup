@@ -13,6 +13,7 @@ export class ContactCardComponent implements OnInit {
   constructor(private cs:ContactsComponent) { }
 
   @Input() contact:ContactJsonPlaceholder = {
+    id: 0,
     nombre: '',
     apellido: '',
     mail: '',
@@ -20,6 +21,10 @@ export class ContactCardComponent implements OnInit {
     direccion: '',
     agendaId: 0,
   };
+
+  deleteContacto(id:number){
+    this.cs.deleteContacto(id)
+  }
 
   ngOnInit(): void {
   }

@@ -12,11 +12,11 @@ import { HeaderAgendaComponent } from './public/components/header-agenda/header-
   declarations: [
     AppComponent,
     HeaderComponent,
-    NewContactComponent,
+    //NewContactComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

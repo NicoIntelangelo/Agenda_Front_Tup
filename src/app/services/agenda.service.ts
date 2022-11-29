@@ -10,8 +10,19 @@ export class AgendaService {
 
   constructor(private auth:AuthService) { }
 
+  // async getAgendas(userId: string): Promise<AgendaJsonPlaceholder[]> {
+  //   const data = await fetch(BACKEND_URL+'/api/Agenda/getAgendas/'+ userId);
+  //   return await data.json();
+  // }
+
   async getAgendas(userId: string): Promise<AgendaJsonPlaceholder[]> {
-    const data = await fetch(BACKEND_URL+'/api/Agenda/getAgendas/'+ userId);
+    const data = await fetch(BACKEND_URL+'/api/Agenda/getAgendas/'+ userId,{
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+      },
+    });
     return await data.json();
   }
 }

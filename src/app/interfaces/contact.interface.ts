@@ -1,10 +1,11 @@
 export interface Contact {
+  id : number,
   nombre : string,
   apellido : string,
   mail : string,
   telefono : string,
   direccion : string,
-  agendaId : number
+  agendaId : number,
 }
 
 // export const defaultContact:Contact = {
@@ -17,10 +18,11 @@ export interface Contact {
 
 
 export interface ContactJsonPlaceholder {
+  id : number,
   nombre : string,
   apellido : string,
   mail : string,
   telefono : string,
   direccion : string,
-  agendaId : number
+  agendaId : number,
 }

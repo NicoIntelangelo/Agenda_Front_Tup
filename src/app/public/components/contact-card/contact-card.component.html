@@ -7,7 +7,7 @@
       <p class="p3" ><strong>Telefono:</strong> {{contact.telefono}}</p>
       <p class="p4"><strong>Email:</strong> {{contact.mail}}</p>
       <!-- <p class="p5"><strong>Descripcion:</strong> {{contact.agendaId}} </p> -->
-      <button class="p6">Borrar</button>
+      <button class="p6" (click)="deleteContacto(contact.id)">Borrar</button>
       <button class="p7">Editar</button>
       <div class="botones">
       </div>

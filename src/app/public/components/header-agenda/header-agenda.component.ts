@@ -25,9 +25,10 @@ export class HeaderAgendaComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.getDataAgendas()
-    //this.auth.getMe()
+    this.getDataAgendas();
+    //this.getAgendaData()
   }
+
 
   async getDataAgendas(){
     const  agendaId = localStorage.getItem("Id") || 'invalid';
@@ -38,6 +39,14 @@ export class HeaderAgendaComponent implements OnInit {
       console.log("error getDataAgendas AgendaComponent")
     }
   }
+
+  // getAgendaData(){
+  //   // const agenda = this.agendas.slice(0,1)
+  //   // console.log('hola',agenda)
+  //   const  agendaId = localStorage.getItem("Id") || 'invalid';
+  //   const agendas = this.as.getAgendas(agendaId)
+  //   console.log(agendas[0])
+  // }
 
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BACKEND_URL } from '../constants/backends';
-import { ContactJsonPlaceholder } from '../interfaces/contact.interface';
+import { Contact, ContactJsonPlaceholder } from '../interfaces/contact.interface';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { AuthService } from './auth.service';
 export class ContactService {
   constructor(private auth:AuthService) {}
 
+
   // async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
   //   const jsonData = await this.getContacts();
   //   const contact = jsonData.filter((contact) => contact.id == id);
@@ -16,7 +17,13 @@ export class ContactService {
   // }
 
   async getContacts(agendaId: number): Promise<ContactJsonPlaceholder[]> {
-    const data = await fetch(BACKEND_URL+'/api/Contacto/agendaContacts/'+ agendaId);
+    const data = await fetch(BACKEND_URL+'/api/Contacto/agendaContacts/'+ agendaId,{
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}` ////******************* */
+      },
+    });
     return await data.json();
   }
 
@@ -32,24 +39,29 @@ export class ContactService {
     return await res.json();
   }
 
-  async addContact(contact: ContactJsonPlaceholder){
+  async addContact(contact: ContactJsonPlaceholder) {  //: Promise<ContactJsonPlaceholder>
     console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contact', {
+    console.log(contact);
+    const res = await fetch(BACKEND_URL+'/api/Contacto/newContact', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`,
       },
-      body: JSON.stringify(contact),
+      body: JSON.stringify(contact)
     });
-    return await res.json();
+    //return await res.json();
+    console.log(res.json())
   }
 
+
+
   async deleteContact(id:number):Promise<boolean>{
-    const res = await fetch(BACKEND_URL+'/api/Contact'+id, {
-      method: 'POST',
+    const res = await fetch(BACKEND_URL+'/api/Contacto/deleteContact/'+id, {
+      method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
-        'Authentication' : this.auth.getSession().token!
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
       },
     });
     return res.ok;

@@ -4,7 +4,7 @@
     <h1>Nuevo Contato</h1>
   </section>
 
-  <section id="ingresos">
+  <!-- <section id="ingresos">
     <div class="container">
       <input class="inputs_formu" type="text" placeholder="Nombre">
       <input class="inputs_formu" type="text" placeholder="Apellido">
@@ -16,5 +16,61 @@
 
       <button>Cargar</button>
     </div>
+  </section> -->
+
+  <section id="ingresos">
+    <div class="container">
+
+      <form (ngSubmit)="newcontact(form)" #form="ngForm">
+        <div class="inputs">
+          <label for="nombre">Nombre</label>
+          <input type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
+            [(ngModel)]="contactData.nombre" #nombre="ngModel">
+        </div>
+        <div class="inputs">
+          <label for="apellido">Apellido</label>
+          <input type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
+            [(ngModel)]="contactData.apellido"   #apellido="ngModel"
+          >
+          <!-- [required]="true"  -->
+        </div>
+        <div class="inputs">
+          <label for="mail">mail</label>
+          <input type="mail" name="mail" id="mail" autocomplete="email" placeholder="Ingrese el mail"
+            [(ngModel)]="contactData.mail"   #mail="ngModel"
+          >
+        </div>
+        <div class="inputs">
+          <label for="telefono">Telefono</label>
+          <input type="telefono" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
+            [(ngModel)]="contactData.telefono"   #telefono="ngModel"
+          >
+        </div>
+        <div class="inputs">
+          <label for="direccion">direccion</label>
+          <input type="direccion" name="direccion" id="direccion"  placeholder="Ingrese la direccion"
+            [(ngModel)]="contactData.direccion"   #direccion="ngModel"
+          >
+        </div>
+        <div class="inputs">
+          <label for="idagenda">Agenda Id</label>
+          <input type="idagenda" name="idagenda" id="idagenda"  placeholder="Ingrese el id de agenda"
+            [(ngModel)]="contactData.agendaId"  #agendaId="ngModel"
+          >
+        </div>
+
+        <!-- <div class="inputs">
+          <label for="id">Id</label>
+          <input type="id" name="id" id="id"  placeholder="Ingrese el id"
+            [(ngModel)]="contactData.id"   #id="ngModel"
+          >
+        </div> -->
+        <div>
+          <!-- <button type="submit" [disabled]="form.invalid">Log In</button> -->
+          <button type="submit" >Log In</button>
+        </div>
+      </form>
+    </div>
   </section>
+
 </div>
