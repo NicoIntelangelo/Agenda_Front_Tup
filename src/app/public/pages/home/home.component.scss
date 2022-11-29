@@ -3,14 +3,19 @@ $color-verde: rgb(104, 166, 201);// rgb(108,153,138);
 $color-verde2: rgb(63, 129, 167); //rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-h1{font-size: 3em;}
-h2{font-size: 2.5em;}
-h3{font-size: 1.5em;}
-p{font-size: 1em;}
-ul{list-style: none;}
+h1{font-size: 3em;
+  font-family: $tipografia-1;}
+h2{font-size: 2.5em;
+  font-family: $tipografia-1;}
+h3{font-size: 1.5em;
+  font-family: $tipografia-1;}
+p{font-size: 1em;
+  font-family: $tipografia-1;}
+ul{list-style: none;
+  font-family: $tipografia-1;}
 li{
   font-size: 1.25em;
-}
+  font-family: $tipografia-1;}
 
 
 // Boton inicio sesion
