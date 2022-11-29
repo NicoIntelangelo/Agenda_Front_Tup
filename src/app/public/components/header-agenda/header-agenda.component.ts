@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { AgendaJsonPlaceholder } from 'src/app/interfaces/agenda.interface';
 import { AgendaService } from 'src/app/services/agenda.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,7 +13,7 @@ export class HeaderAgendaComponent implements OnInit {
 
   agendas:AgendaJsonPlaceholder[] = [];
 
-  agendaSeleccionada:string = "";
+  agendaSeleccionada:number = 0;
 
 
   constructor(private as:AgendaService, private auth:AuthService) { }
@@ -26,7 +26,6 @@ export class HeaderAgendaComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataAgendas();
-    //this.getAgendaData()
   }
 
 
@@ -40,13 +39,12 @@ export class HeaderAgendaComponent implements OnInit {
     }
   }
 
-  // getAgendaData(){
-  //   // const agenda = this.agendas.slice(0,1)
-  //   // console.log('hola',agenda)
-  //   const  agendaId = localStorage.getItem("Id") || 'invalid';
-  //   const agendas = this.as.getAgendas(agendaId)
-  //   console.log(agendas[0])
-  // }
+  agendaSelec(){
+    console.log (this.agendaSeleccionada)
+    return this.agendaSeleccionada
+  }
+
+
 
 
 }
