@@ -3,7 +3,7 @@ import { BACKEND_URL } from '../constants/backends';
 import { iAuthRequest } from '../interfaces/auth';
 import { ISession } from '../interfaces/session.interface';
 
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt'; //npm install @auth0/angular-jwt
 
 @Injectable({
   providedIn: 'root',

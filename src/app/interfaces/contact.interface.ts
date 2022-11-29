@@ -8,14 +8,6 @@ export interface Contact {
   agendaId : number,
 }
 
-// export const defaultContact:Contact = {
-//   Nombre : string,
-//   Mail : string,
-//   Telefono : string,
-//   Direccion : string,
-//   AgendaId : number
-// }
-
 
 export interface ContactJsonPlaceholder {
   id : number,

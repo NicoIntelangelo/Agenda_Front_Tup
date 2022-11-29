@@ -3,9 +3,9 @@ export interface iAuthRequest{
     password:string;
   }
 
-export interface IRegistroInterface{
-  name: string;
-  telefono: string;
-  email:string;
-  password:string;
-}
+// export interface iRegisterRequest{
+//   nombre:string;
+//   email:string;
+//   password:string;
+//   telefono:string;
+// }
