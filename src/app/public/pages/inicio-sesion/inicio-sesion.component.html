@@ -25,8 +25,8 @@
     </div>
     <div id="mal-ingreso" *ngIf="password.touched && password.errors">La contraseña debe tener al menos 6 caracteres.</div>
     <div>
-      <button type="submit" [disabled]="form.invalid">Log In</button>
-      <button type="button" [routerLink]="['signin']">Sign In</button>
+      <button type="submit" >Ingresar</button>
+      <button type="button" [routerLink]="['/registrarse']">Registrarme</button>
     </div>
   </form>
 </section>
