@@ -2,8 +2,9 @@
   <div class="container">
     <a class="logo" [routerLink]="['']">Agenda</a>
     <nav>
-      <a [routerLink]="['/new-contact']">Nuevo Contacto</a>
-      <a [routerLink]="['/contacts']">Contactos</a>
+      <a [routerLink]="['/new-contact']" *ngIf="isLogg() === true" >Nuevo Contacto</a>
+      <a [routerLink]="['/contacts']" *ngIf="isLogg() === true" >Contactos</a>
     </nav>
+    <button id="singout" *ngIf="isLogg() === true" (click)="logOut()">SingOut</button>
   </div>
 </header>

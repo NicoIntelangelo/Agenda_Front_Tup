@@ -23,6 +23,7 @@ export class ContactCardComponent implements OnInit {
   };
 
   deleteContacto(id:number){
+    console.log("contacto id: ",id," eliminado")
     this.cs.deleteContacto(id)
   }
 
