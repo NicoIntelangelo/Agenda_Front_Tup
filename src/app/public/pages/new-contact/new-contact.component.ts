@@ -39,10 +39,9 @@ export class NewContactComponent implements OnInit {
   constructor(private cs : ContactService, private router:Router) { }  //private Cc: ContactCardComponent
 
 
-
-
   ngOnInit(): void {
     this.contactForEditData(17)//esta fun carga los datos del usuario a editar
+    this.edit_new = true
   }
 
 

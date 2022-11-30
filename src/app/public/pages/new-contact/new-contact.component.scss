@@ -5,13 +5,7 @@ $color-verde: rgb(104, 166, 201);// rgb(108,153,138);
 $color-verde2: rgb(63, 129, 167); //rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-*{
-  box-sizing: border-box;
-}
 
-html{
-  scroll-behavior: smooth;
-}
 
 .fondo{
   margin: 0;
@@ -23,18 +17,18 @@ html{
       rgba(0,0,0,0.5)
   )
   ,url("../new-contact/img/fondo.jpg");
+  background-color: $celeste;
 }
 
-h1{font-size: 3em;}
-h2{font-size: 2.5em;}
-h3{font-size: 1.5em;}
-p{font-size: 1em;}
-ul{list-style: none;}
-li{font-size: 1.25em;}
-
-.container{
-  max-width: 1400px;
+#ingresos .container{
+  max-width: 430px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: left;
+  padding: 10px 10px;
 }
 
 #title h1{
@@ -42,20 +36,15 @@ li{font-size: 1.25em;}
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 20px;
+  padding: 13px 30px;
   font-weight: bold;
-  font-size: 70px;
-  color: white;
+  font-size: 50px;
+  color:$color-verde;
+  font-weight: bold;
+  font-family: $tipografia-1;
 }
 
-#ingresos .container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 30px;
-}
-
-#ingresos input{
+.container input{
   margin: 10px;
   border-color: rgba(255, 255, 255, 0.507);
   border-radius: 10px;
@@ -65,22 +54,35 @@ li{font-size: 1.25em;}
   box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
   color: white;
   font-size: 20px;
+  font-family: $tipografia-1;
 }
 
-#ingresos .input_avatar{
-  height: 40px;
-  width: 40px;
-  border: none;
-}
 
-#ingresos input::placeholder{
+.container input::placeholder{
   color: white;
   font-size: 20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: $tipografia-1;
   padding:30px;
 }
 
-#ingresos button{
+.container label{
+  color: $color-blanco;
+  font-family: $tipografia-1;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 10px;
+  color: $color-verde;
+}
+
+.container #mal-ingreso{
+  color: $color-blanco;
+  font-family: $tipografia-1;
+  font-weight: lighter;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.container button{
   font-size: 1.5em;
   font-weight: bold;
   padding: 10px 20px;
@@ -92,120 +94,10 @@ li{font-size: 1.25em;}
   margin-top: 10px;
 }
 
-#ingresos button:hover{
+.container button:hover{
   background-color: rgb(66, 66, 66) ;
 }
 
-
-
-#title h1{
-  margin: 0px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 30px;
-  font-weight: bold;
-  font-size: 50px;
-  color:$color-verde;
-  font-weight: bold;
-  font-family: $tipografia-1;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-//***********************************************************
-#inicio-sesion{
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: $tipografia-1;
-  height: 90vh;
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url("../../../../assets/img/Blue-Icon.png");
-  background-size: cover;
-}
-
-#iniciar-sesion .container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 30px;
-}
-
-#form-iniciar-sesion input{
-  margin: 10px;
-  border-color: rgba(255, 255, 255, 0.507);
-  border-radius: 10px;
-  height: 50px;
-  width: 400px;
-  background-color:rgba(255, 255, 255, 0.5);
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
-  color: white;
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#form-iniciar-sesion .input_avatar{
-  height: 40px;
-  width: 40px;
-  border: none;
-}
-
-#form-iniciar-sesion input::placeholder{
-  color: $color-verde;
-  font-size: 20px;
-  font-family:$tipografia-1;
-  padding:30px;
-}
-
-#form-iniciar-sesion button{
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.5);
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
-  color: $color-blanco;
-  background-color: $color-verde;
-  margin-top: 10px;
-  margin-left: 20px;
-}
-
-#form-iniciar-sesion button:hover{
-  background-color: $color-verde2;
-}
-
-#form-iniciar-sesion label{
-  color: $color-blanco;
-  font-family: $tipografia-1;
-  font-weight: bold;
-  font-size: 20px;
-  margin-left: 10px;
-  color: $color-verde;
-}
-
-#mal-ingreso{
-  color: $color-blanco;
-  font-family: $tipografia-1;
-  font-weight: lighter;
-  font-size: 13px;
-  margin-left: 10px;
-}
-
-#fondo-inicio-sesion{
-  background-color: rgb(239, 240, 234,0.5);
-  padding: 25px;
-  padding-top: 0px;
-  margin-top: 100px;
-  border-radius: 10px;
-}
 
 
 
