@@ -39,19 +39,18 @@ export class ContactService {
   //   return await res.json();
   // }
 
-  async addContact(contact: ContactJsonPlaceholder) {  //: Promise<ContactJsonPlaceholder>
-    console.log('Enviando edit de usuario a la api');
+  async addContact(contact: ContactJsonPlaceholder) : Promise<ContactJsonPlaceholder>{ //: Promise<ContactJsonPlaceholder>
     console.log(contact);
     const res = await fetch(BACKEND_URL+'/api/Contacto/newContact', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
-        'Authorization' :  `Bearer ${this.auth.getSession().token!}`,
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
       },
       body: JSON.stringify(contact)
     });
-    //return await res.json();
-    console.log(res.json())
+    return await res.json();
+    //console.log(res.json())
   }
 
 
