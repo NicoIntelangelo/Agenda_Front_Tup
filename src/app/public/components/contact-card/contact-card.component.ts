@@ -25,6 +25,7 @@ export class ContactCardComponent implements OnInit {
   deleteContacto(id:number){
     console.log("contacto id: ",id," eliminado")
     this.cs.deleteContacto(id)
+    window.location.reload();//recarga la pagina automaticamente
   }
 
   ngOnInit(): void {

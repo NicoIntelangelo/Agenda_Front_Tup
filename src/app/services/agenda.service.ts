@@ -25,4 +25,15 @@ export class AgendaService {
     });
     return await data.json();
   }
+
+  async addAgenda(agendaid: string) {
+    const data = await fetch(BACKEND_URL+'/api/Agenda/addAgendaUser/'+ agendaid,{
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+      },
+    });
+    return await data.text();
+  }
 }

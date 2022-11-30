@@ -15,6 +15,7 @@ export class HeaderAgendaComponent implements OnInit {
 
   agendaSeleccionada:number = 0;
 
+  addAgendaId: number = 0;
 
   constructor(private as:AgendaService, private auth:AuthService) { }
 
@@ -42,6 +43,12 @@ export class HeaderAgendaComponent implements OnInit {
   agendaSelec(){
     console.log (this.agendaSeleccionada)
     return this.agendaSeleccionada
+  }
+
+  addAgenda(agendaid:string){
+    const  agendaId = this.as.addAgenda(agendaid)
+    window.location.reload();//recarga la pagina automaticamente
+    console.log(agendaId)
   }
 
 
