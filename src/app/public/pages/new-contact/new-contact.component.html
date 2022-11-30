@@ -1,69 +1,125 @@
 <div class="fondo">
 
-  <section id="title">
-    <h1>Nuevo Contato</h1>
-  </section>
+<div *ngIf="edit_new === true; then thenBlock else elseBlock"></div>
+<!-- <ng-template #thenBlock>Content to render when condition is true.</ng-template> -->
+<!-- <ng-template #elseBlock>Content to render when condition is false.</ng-template> -->
 
-  <!-- <section id="ingresos">
-    <div class="container">
-      <input class="inputs_formu" type="text" placeholder="Nombre">
-      <input class="inputs_formu" type="text" placeholder="Apellido">
-      <input class="inputs_formu" type="mail" placeholder="Mail">
-      <input class="inputs_formu" type="text" placeholder="Telefono">
-      <input class="inputs_formu" type="text" placeholder="@">
-      <input class="inputs_formu" type="text" placeholder="Dirección">
-      <input class="input_avatar" type="color" placeholder="avatar">
 
-      <button>Cargar</button>
-    </div>
-  </section> -->
+<ng-template #thenBlock>
 
-  <section id="ingresos">
-    <div class="container">
+    <section id="title">
+      <h1>Nuevo Contato</h1>
+    </section>
 
-      <form (ngSubmit)="newcontact(form)" #form="ngForm">
-        <div class="inputs">
-          <label for="nombre">Nombre</label>
-          <input type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
-            [(ngModel)]="contactData.nombre" #nombre="ngModel">
-        </div>
-        <div class="inputs">
-          <label for="apellido">Apellido</label>
-          <input type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
-            [(ngModel)]="contactData.apellido"   #apellido="ngModel"
-          >
-          <!-- [required]="true"  -->
-        </div>
-        <div class="inputs">
-          <label for="mail">mail</label>
-          <input type="mail" name="mail" id="mail" autocomplete="email" placeholder="Ingrese el mail"
-            [(ngModel)]="contactData.mail"   #mail="ngModel"
-          >
-        </div>
-        <div class="inputs">
-          <label for="telefono">Telefono</label>
-          <input type="telefono" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
-            [(ngModel)]="contactData.telefono"   #telefono="ngModel"
-          >
-        </div>
-        <div class="inputs">
-          <label for="direccion">direccion</label>
-          <input type="direccion" name="direccion" id="direccion"  placeholder="Ingrese la direccion"
-            [(ngModel)]="contactData.direccion"   #direccion="ngModel"
-          >
-        </div>
-        <div class="inputs">
-          <label for="agendaId">Agenda Id</label>
-          <input type="agendaId" name="agendaId" id="agendaId"  placeholder="Ingrese el id de agenda"
-            [(ngModel)]="contactData.agendaId"  #agendaId="ngModel"
-          >
-        </div>
-        <div>
-          <!-- <button type="submit" [disabled]="form.invalid">Log In</button> -->
-          <button type="submit" >Log In</button>
-        </div>
-      </form>
-    </div>
-  </section>
+    <section id="ingresos">
+      <div class="container">
+
+        <form (ngSubmit)="newcontact(form)" #form="ngForm">
+
+          <div class="inputs">
+            <label for="nombre">Nombre</label>
+            <input type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
+            [(ngModel)]="contactData.nombre" #nombre="ngModel" [maxlength]="15">
+          </div>
+
+          <div class="inputs">
+            <label for="apellido">Apellido</label>
+            <input type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
+            [(ngModel)]="contactData.apellido"   #apellido="ngModel" [maxlength]="15">
+            <!-- [required]="true"  -->
+          </div>
+
+          <div class="inputs">
+            <label for="mail">mail</label>
+            <input type="mail" name="mail" id="mail" autocomplete="email" placeholder="Ingrese el mail"
+            [(ngModel)]="contactData.mail"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">
+          </div> <p *ngIf="mail.touched && mail.errors">Correo electrónico no válido.</p>
+
+          <div class="inputs">
+            <label for="telefono">Telefono</label>
+            <input type="telefono" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
+            [(ngModel)]="contactData.telefono"   #telefono="ngModel" [maxlength]="15">
+          </div>
+
+          <div class="inputs">
+            <label for="direccion">direccion</label>
+            <input type="direccion" name="direccion" id="direccion"  placeholder="Ingrese la direccion"
+            [(ngModel)]="contactData.direccion"   #direccion="ngModel" [maxlength]="25">
+          </div>
+
+          <div class="inputs">
+            <label for="agendaId">Agenda Id</label>
+            <input type="agendaId" name="agendaId" id="agendaId"  placeholder="Ingrese el id de agenda"
+            [(ngModel)]="contactData.agendaId"  #agendaId="ngModel" [required]="true">
+          </div>
+
+          <div>
+            <button type="submit" [disabled]="form.invalid">Cargar</button>
+            <!-- <button type="submit" >Cargar</button> -->
+          </div>
+        </form>
+      </div>
+    </section>
+  </ng-template>
+
+
+
+  <ng-template #elseBlock>
+
+    <section id="title">
+      <h1>Editar Contato</h1>
+    </section>
+
+    <section id="ingresos">
+      <div class="container">
+
+        <form (ngSubmit)="editcontact(form)" #form="ngForm">
+
+          <div class="inputs">
+            <label for="nombre">Nombre</label>
+            <input type="nombre"  value="algo" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
+            [(ngModel)]="contactForeditData.nombre" #nombre="ngModel" [maxlength]="15">
+          </div>
+
+          <div class="inputs">
+            <label for="apellido">Apellido</label>
+            <input type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
+            [(ngModel)]="contactForeditData.apellido"   #apellido="ngModel" [maxlength]="15">
+            <!-- [required]="true"  -->
+          </div>
+
+          <div class="inputs">
+            <label for="mail">mail</label>
+            <input type="mail" name="mail" id="mail" autocomplete="email" placeholder="Ingrese el mail"
+            [(ngModel)]="contactForeditData.mail"   #mail="ngModel" pattern='^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$' [maxlength]="30">
+          </div>
+          <p *ngIf="mail.touched && mail.errors">Correo electrónico no válido.</p>
+
+          <div class="inputs">
+            <label for="telefono">Telefono</label>
+            <input type="telefono" name="telefono" id="telefono"  placeholder="Ingrese el telefono"
+            [(ngModel)]="contactForeditData.telefono"   #telefono="ngModel"[maxlength]="15">
+          </div>
+
+          <div class="inputs">
+            <label for="direccion">direccion</label>
+            <input type="direccion" name="direccion" id="direccion"  placeholder="Ingrese la direccion"
+            [(ngModel)]="contactForeditData.direccion"   #direccion="ngModel"[maxlength]="25">
+          </div>
+
+          <!-- <div class="inputs">
+            <label for="agendaId">Agenda Id</label>
+            <input type="agendaId" name="agendaId" id="agendaId"  placeholder="Ingrese el id de agenda"
+            [(ngModel)]="contactData.agendaId"  #agendaId="ngModel">
+          </div> -->
+
+          <div>
+            <button type="submit" [disabled]="form.invalid">Cargar</button>
+            <!-- <button type="submit" >Cargar</button> -->
+          </div>
+        </form>
+      </div>
+    </section>
+  </ng-template>
 
 </div>
