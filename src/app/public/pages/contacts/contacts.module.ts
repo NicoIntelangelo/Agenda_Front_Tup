@@ -6,6 +6,7 @@ import { ContactCardComponent } from '../../components/contact-card/contact-card
 import { HeaderAgendaComponent } from '../../components/header-agenda/header-agenda.component';
 import { EditContactComponent } from '../../components/edit-contact/edit-contact.component';
 import { FormsModule } from '@angular/forms';
+import { AgendaComponent } from '../../components/agenda/agenda.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     ContactsComponent,
     ContactCardComponent,
     HeaderAgendaComponent,
-    EditContactComponent
+    EditContactComponent,
+    AgendaComponent
   ],
   imports: [
     CommonModule,

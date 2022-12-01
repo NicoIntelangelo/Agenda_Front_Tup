@@ -18,27 +18,26 @@ import { NewContactComponent } from '../new-contact/new-contact.component';
 })
 export class ContactsComponent implements OnInit {
 
-  contactsData:ContactJsonPlaceholder[] = [];
+  contactsData:ContactJsonPlaceholder[] = [];//lista con la cual itera el ngfor en el html
 
   constructor(private cs:ContactService, private router:Router) { }  //private Ha: HeaderAgendaComponent
 
-  idContactoForEdit: number = 0
+  idContactoForEdit: number = 0 //este dato llega desde la contact card y es utilizado por el edit contact component
 
-  abrirContactEdit: boolean = false
+  abrirContactEdit: number = 0 //0 contact card,1 editar contacto, 2 crear agenda
 
-  agendaMostrada: number = -1 //id de la agenda mostrada
+  agendaMostrada: number = -1 //id de la agenda mostrada, si es -1 muestra el titulo "seleccionar agenda"
 
 
   ngOnInit(): void {
-    //this.getData(this.agendaMostrada) //this.agendaSeleccionada()
   }
 
 
   async getData(agendaId : number): Promise<void>{
-    this.contactsData = await this.cs.getContacts(agendaId);
+    this.contactsData = await this.cs.getContacts(agendaId); //rellena ContactData con todos los contactos de una agenda
   }
 
-  async deleteContacto(contactoId : number): Promise<void>{
+  async deleteContacto(contactoId : number): Promise<void>{ //se ejecuta desde la contact card
     await this.cs.deleteContact(contactoId);
   }
 

@@ -12,17 +12,17 @@ export class HeaderComponent implements OnInit {
   constructor(private auth:AuthService, private router:Router) { }
 
   isLogg(){
-    this.auth.getSession()
-    return this.auth.isLoggedIn()
+    //this.auth.getSession()
+    return this.auth.isLoggedIn()//si esta logg devuelve true sino false
   }
 
   logOut(){
-    this.router.navigate([''])
-    this.auth.resetSession()
+    this.router.navigate(['']) //al ejecutar navega al home
+    this.auth.resetSession() //y resetea la secsion es decir borra el token del localstorage
   }
 
   ngOnInit(): void {
-    this.isLogg()
+    //sthis.isLogg() //al iniciar o al recargar la pagina corrobora si el user esta logg
   }
 
 }

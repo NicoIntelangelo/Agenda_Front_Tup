@@ -23,10 +23,9 @@ export class RegistrarseComponent {
 
 
   async registrarme(form:NgForm){
-
     console.log(form.value);
-    const user = await this.auth.addUser(form.value);
-    if(user) this.router.navigate(['/inicio-sesion']); //cuando iniciamos secion nos lleva a contactos
+    const user = await this.auth.addUser(form.value);//ejectua addUser del auth service con los valores del form
+    if(user) this.router.navigate(['/inicio-sesion']); //cuando nos registramos nos lleva al inicio de sesion
   }
 
 

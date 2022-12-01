@@ -21,10 +21,9 @@ export class InicioSesionComponent {
 
 
   async login(form:NgForm){
-    //Valor del formulario para no usar NgModel
     console.log(form.value);
-    const token = await this.auth.login(form.value);
-    if(token) this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos
+    const token = await this.auth.login(form.value);//ejecutamos el metodo login de auth service con los datos del form
+    if(token) this.router.navigate(['/contacts']); //si recibe el token nos lleva a contactos
   }
 
 }
