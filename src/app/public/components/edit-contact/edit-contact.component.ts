@@ -25,23 +25,37 @@ export class EditContactComponent implements OnInit {
 
   constructor(private cs : ContactService, private router:Router ,private cc:ContactsComponent) { }
 
-  idContactoForEdit: number = this.cc.idContactoForEdit
+  idContactoForEdit: number = this.cc.idContactoForEdit //toma el valor de idContactoForEdit del contact component
 
   ngOnInit(): void {
-    this.contactForEditData(this.idContactoForEdit)
+    this.contactForEditData(this.idContactoForEdit)//al iniciar se ejecuta el metodo contactForEditData con el valor del idContactoForEdit
   }
 
-  async getContacto(id:number){
-    const contacto = this.cs.getContactDetails(id);
+
+  async getContacto(id:number){  //recibe el id de un contacto
+    const contacto = this.cs.getContactDetails(id); //trae un objeto contacto con todos sus datos
     return await contacto
-}
+  }
 
-  async editcontact(id:number, form:NgForm){ /***************** */
+
+  async contactForEditData(id: number){
+    const contactForEdit = this.getContacto(id)  //ejecuta getContacto() con el id del contacto que va a ser editado
+
+    this.contactForeditData.id = (await contactForEdit).id;           //reemplaza todos los valores del contactForeditData con los del contacto buscado
+    this.contactForeditData.nombre = (await contactForEdit).nombre,   //para que cuando se abra el form aparezcan todos los datos actuales del contacto
+    this.contactForeditData.apellido = (await contactForEdit).apellido,
+    this.contactForeditData.mail = (await contactForEdit).mail,
+    this.contactForeditData.telefono = (await contactForEdit).telefono,
+    this.contactForeditData.direccion = (await contactForEdit).direccion,
+    this.contactForeditData.agendaId = (await contactForEdit).agendaId
+  }
+
+
+  async editcontact(id:number, form:NgForm){ // toma  el id y los datos editados del contacto desde el form
     console.log(form.value);
-    //const id = 17//this.Cc.idEdicion//id del contacto a editar
 
-    const contactEdit:ContactJsonPlaceholder = {
-      id: this.contactForeditData.id,
+    const contactEdit:ContactJsonPlaceholder = { //crea un objeto contacto y remplaza sus valores con los del contactForeditData
+      id: this.contactForeditData.id,            // contactForeditData es el contacto que es editado en el form
       nombre: this.contactForeditData.nombre,
       apellido: this.contactForeditData.apellido,
       mail: this.contactForeditData.mail,
@@ -50,30 +64,16 @@ export class EditContactComponent implements OnInit {
       agendaId: 0
       };
 
-      const contactoeditado = this.cs.editContact(id, contactEdit);
+      const contactoeditado = this.cs.editContact(id, contactEdit); //ejecuta el metodo editContact del contact service
 
-      console.log("el contacto '",(await contactoeditado).nombre,"' id:",(await contactoeditado).id, "fue editado correctamente");
-      this.cc.abrirContactEdit = false
-      //this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-
-    }
-
-
-  async contactForEditData(id: number){
-    const contactForEditData = this.getContacto(id)//tiene q recibir el id a editar
-
-    this.contactForeditData.id = (await contactForEditData).id;
-    this.contactForeditData.nombre = (await contactForEditData).nombre,
-    this.contactForeditData.apellido = (await contactForEditData).apellido,
-    this.contactForeditData.mail = (await contactForEditData).mail,
-    this.contactForeditData.telefono = (await contactForEditData).telefono,
-    this.contactForeditData.direccion = (await contactForEditData).direccion,
-    this.contactForeditData.agendaId = (await contactForEditData).agendaId
+      console.log("el contacto '",(await contactoeditado).nombre,"' id:",(await contactoeditado).id, "fue editado correctamente"); //hace un console.log con los valores devueltos
   }
 
-  editContactFull(id:number, form:NgForm){
-    this.contactForEditData(this.idContactoForEdit)
+
+  editContactFull(id:number, form:NgForm){ //metodo llamado desde el submit del form
+    //this.contactForEditData(this.idContactoForEdit)
     this.editcontact(id, form)
+    this.cc.abrirContactEdit = 0 //cambia abrirContactEdit del contact componet a 0 para que se cierre el form y se abran las contact card
     //window.location.reload();
   }
 }

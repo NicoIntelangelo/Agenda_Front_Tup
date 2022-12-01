@@ -36,4 +36,29 @@ export class AgendaService {
     });
     return await data.text();
   }
+
+  async createAgenda(agenda: AgendaJsonPlaceholder) : Promise<number>{ //: Promise<ContactJsonPlaceholder>
+    console.log(agenda);
+    const res = await fetch(BACKEND_URL+'/api/Agenda/newagenda', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+      },
+      body: JSON.stringify(agenda)
+    });
+    return await res.json();
+    //console.log(res.json())
+  }
+
+  async deleteAgenda(agendaid: string) {
+    const data = await fetch(BACKEND_URL+'/api/Agenda/deleteAgenda/'+ agendaid,{
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+      },
+    });
+    return await data.text();
+  }
 }

@@ -12,9 +12,9 @@ import { ContactsComponent } from '../../pages/contacts/contacts.component';
 export class HeaderAgendaComponent implements OnInit {
 
 
-  agendas:AgendaJsonPlaceholder[] = [];
+  agendas:AgendaJsonPlaceholder[] = [];//lista con la cual itera el ngfor en el html
 
-  addAgendaId: number = 0;
+  //addAgendaId: number = 0;
 
   constructor(private as:AgendaService, private auth:AuthService, private Cc:ContactsComponent) { }
 
@@ -25,14 +25,14 @@ export class HeaderAgendaComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    this.getDataAgendas();
+    this.getDataAgendas();//ejecuta el metodo para traer las agendas del usuario
   }
 
 
   async getDataAgendas(){
-    const  userId = localStorage.getItem("Id") || 'invalid';
+    const  userId = localStorage.getItem("Id") || 'invalid'; //toma el Id desde el local storage
     if (userId !== 'invalid'){
-      this.agendas = await this.as.getAgendas(userId);
+      this.agendas = await this.as.getAgendas(userId); //trae todas las agendas del usuario
     }
     else{
       console.log("error getDataAgendas AgendaComponent")
@@ -40,17 +40,27 @@ export class HeaderAgendaComponent implements OnInit {
   }
 
 
-  addAgenda(agendaid:string){
-    const  agendaId = this.as.addAgenda(agendaid)
+  addAgenda(agendaid:string){ //toma el valor del input(html)
+    const  agendaId = this.as.addAgenda(agendaid) // agrega la agenda con ese id
     window.location.reload();//recarga la pagina automaticamente
     console.log(agendaId)
   }
 
   agendaSelec(agendaId: number){
-    this.Cc.agendaMostrada = agendaId
-    this.Cc.getData(agendaId)
+    this.Cc.agendaMostrada = agendaId //cambia el valor de la variable agendaMostrada en el contact.component(la utiliza para mostrar el codigo de la agenda en el titulo)
+    this.Cc.abrirContactEdit = 0 //para q el html muestre las contact card
+    this.Cc.getData(agendaId) //ejecuta el metodo getdata() del contact component el cual trae todos los contactos de una agenda
   }
 
+  crearAgenda(){
+    this.Cc.abrirContactEdit = 2
+  }
+
+  deleteAgenda(agendaid:string){ //toma el valor del input(html)
+    const  agendaId = this.as.deleteAgenda(agendaid) // agrega la agenda con ese id
+    console.log("agenda:",agendaId,"eliminada")
+    window.location.reload();//recarga la pagina automaticamente
+  }
 
 
 }

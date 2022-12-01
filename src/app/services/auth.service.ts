@@ -66,9 +66,9 @@ export class AuthService {
     localStorage.setItem('Id', id);
   }
 
-  setSession(token: any, expiresTimeHours: number = 24) {
+  setSession(token: any, expiresTimeHours: number = 1) {
     const date = new Date();
-    date.setHours(date.getHours() + expiresTimeHours);
+    date.setHours(date.getHours() + expiresTimeHours);//la hora actual+la cantidad de horas validas del token
 
     const session: ISession = {
       expiresIn: new Date(date).toISOString(),

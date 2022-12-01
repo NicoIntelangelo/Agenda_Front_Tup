@@ -9,11 +9,13 @@ import { ContactCardComponent } from './public/components/contact-card/contact-c
 import { HeaderAgendaComponent } from './public/components/header-agenda/header-agenda.component';
 import { RegistrarseComponent } from './public/pages/registrarse/registrarse.component';
 import { EditContactComponent } from './public/components/edit-contact/edit-contact.component';
+import { AgendaComponent } from './public/components/agenda/agenda.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    //AgendaComponent,
     //EditContactComponent,
     //RegistrarseComponent,
     //NewContactComponent,
