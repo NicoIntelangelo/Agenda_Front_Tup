@@ -66,7 +66,7 @@
 
   <ng-template #elseBlock>
 
-    <section id="title">
+    <!-- <section id="title">
       <h1>Editar Contato</h1>
     </section>
 
@@ -85,7 +85,7 @@
             <label for="apellido">Apellido</label>
             <input type="apellido" name="apellido" id="apellido" autocomplete="family-name" placeholder="Ingrese el apellido"
             [(ngModel)]="contactForeditData.apellido"   #apellido="ngModel" [maxlength]="15">
-            <!-- [required]="true"  -->
+
           </div>
 
           <div class="inputs">
@@ -107,19 +107,13 @@
             [(ngModel)]="contactForeditData.direccion"   #direccion="ngModel"[maxlength]="25">
           </div>
 
-          <!-- <div class="inputs">
-            <label for="agendaId">Agenda Id</label>
-            <input type="agendaId" name="agendaId" id="agendaId"  placeholder="Ingrese el id de agenda"
-            [(ngModel)]="contactData.agendaId"  #agendaId="ngModel">
-          </div> -->
-
           <div>
             <button type="submit" [disabled]="form.invalid">Cargar</button>
-            <!-- <button type="submit" >Cargar</button> -->
+
           </div>
         </form>
       </div>
-    </section>
+    </section> -->
   </ng-template>
 
 </div>

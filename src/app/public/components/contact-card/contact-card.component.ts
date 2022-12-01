@@ -39,7 +39,8 @@ export class ContactCardComponent implements OnInit {
   editContacto(id:number){
     console.log("contacto id: ",id," edit")
     this.cc.idContactoForEdit = id
-    this.router.navigate(['/new-contact']);
+    this.cc.abrirContactEdit = true
+    //this.router.navigate(['/']);
   }
 
 }

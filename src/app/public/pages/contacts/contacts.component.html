@@ -5,13 +5,15 @@
   <h1 *ngIf="agendaMostrada !== -1" >Agenda: {{agendaMostrada}}</h1> <!-- poner codigo de agenda ******** -->
   <h1 *ngIf="agendaMostrada === -1" >Seleccione una Agenda</h1>
 
-  <div id="contacts">
+  <div id="contacts" *ngIf="abrirContactEdit !== true">
       <app-contact-card
       *ngFor="let contact of contactsData"
       [contact]="contact"
       >
       </app-contact-card>
   </div>
+
+  <app-edit-contact *ngIf="abrirContactEdit === true"></app-edit-contact>
 
 </div>
 
