@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { ContactJsonPlaceholder } from 'src/app/interfaces/contact.interface';
 import { ContactsComponent } from '../../pages/contacts/contacts.component';
+import { NewContactComponent } from '../../pages/new-contact/new-contact.component';
 //import { Contact, defaultContact, Eric, Catherine } from 'src/app/interfaces/contactData';
 
 @Component({
@@ -10,7 +12,9 @@ import { ContactsComponent } from '../../pages/contacts/contacts.component';
 })
 export class ContactCardComponent implements OnInit {
 
-  constructor(private cs:ContactsComponent) { }
+  constructor(private cc:ContactsComponent, private router:Router) { }
+
+
 
   @Input() contact:ContactJsonPlaceholder = {
     id: 0,
@@ -22,12 +26,21 @@ export class ContactCardComponent implements OnInit {
     agendaId: 0,
   };
 
-  deleteContacto(id:number){
-    console.log("contacto id: ",id," eliminado")
-    this.cs.deleteContacto(id)
-  }
-
   ngOnInit(): void {
   }
+
+
+  deleteContacto(id:number){
+    console.log("contacto id: ",id," eliminado")
+    this.cc.deleteContacto(id)
+    //window.location.reload();//recarga la pagina automaticamente
+  }
+
+  editContacto(id:number){
+    console.log("contacto id: ",id," edit")
+    this.cc.idContactoForEdit = id
+    this.router.navigate(['/new-contact']);
+  }
+
 }
 

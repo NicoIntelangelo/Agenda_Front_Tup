@@ -14,6 +14,8 @@ import { NewContactComponent } from './new-contact.component';
     CommonModule,
     NewContactRoutingModule,
     FormsModule
+  ],
+  exports: [
   ]
 })
 export class NewContactModule { }

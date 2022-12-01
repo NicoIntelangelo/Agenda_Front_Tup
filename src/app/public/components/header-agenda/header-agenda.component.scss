@@ -7,6 +7,10 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 .container{
   height: 46px;
   background-color: $color-blanco;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: auto;
+
 }
 
 .boton{
@@ -36,3 +40,44 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   height:46px ;
   margin-top: 0px;
 }
+
+.addagenda input{
+  margin: 10px;
+  border-color: $color-verde;
+  border-style: ridge;
+  height: 20px;
+  width: 30px;
+  background-color:rgba(108,153,138, 0.5);
+  color: white;
+  font-size: 15px;
+}
+
+.addagenda{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.addagenda{
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  display: inline;
+}
+
+.addagenda button{
+  display: inline;
+  font-family: $tipografia-1;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.5);
+  color: $color-blanco;
+  background-color: $color-verde;
+  height: 25px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+

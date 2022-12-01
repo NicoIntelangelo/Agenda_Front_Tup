@@ -29,5 +29,6 @@ export class RegistrarseComponent {
     if(user) this.router.navigate(['/inicio-sesion']); //cuando iniciamos secion nos lleva a contactos
   }
 
+
 }
 
