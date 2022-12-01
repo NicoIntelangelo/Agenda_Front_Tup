@@ -24,6 +24,8 @@ export class ContactsComponent implements OnInit {
 
   idContactoForEdit: number = 0
 
+  abrirContactEdit: boolean = false
+
   agendaMostrada: number = -1 //id de la agenda mostrada
 
 

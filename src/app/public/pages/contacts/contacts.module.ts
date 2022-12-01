@@ -4,6 +4,8 @@ import { ContactsComponent } from './contacts.component';
 import { contactsRoutingModule } from './home-routing.module';
 import { ContactCardComponent } from '../../components/contact-card/contact-card.component';
 import { HeaderAgendaComponent } from '../../components/header-agenda/header-agenda.component';
+import { EditContactComponent } from '../../components/edit-contact/edit-contact.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,11 +13,14 @@ import { HeaderAgendaComponent } from '../../components/header-agenda/header-age
   declarations: [
     ContactsComponent,
     ContactCardComponent,
-    HeaderAgendaComponent
+    HeaderAgendaComponent,
+    EditContactComponent
   ],
   imports: [
     CommonModule,
-    contactsRoutingModule
+    contactsRoutingModule,
+    FormsModule
+
   ],
   exports:[
     HeaderAgendaComponent

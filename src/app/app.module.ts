@@ -8,11 +8,13 @@ import { NewContactComponent } from './public/pages/new-contact/new-contact.comp
 import { ContactCardComponent } from './public/components/contact-card/contact-card.component';
 import { HeaderAgendaComponent } from './public/components/header-agenda/header-agenda.component';
 import { RegistrarseComponent } from './public/pages/registrarse/registrarse.component';
+import { EditContactComponent } from './public/components/edit-contact/edit-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    //EditContactComponent,
     //RegistrarseComponent,
     //NewContactComponent,
   ],
