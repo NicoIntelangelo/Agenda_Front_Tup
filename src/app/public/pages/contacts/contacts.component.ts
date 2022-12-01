@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactJsonPlaceholder } from 'src/app/interfaces/contact.interface';
 import { ContactService } from 'src/app/services/contact.service.service';
 import { HeaderAgendaComponent } from '../../components/header-agenda/header-agenda.component';
+import { NewContactComponent } from '../new-contact/new-contact.component';
 
 
 
@@ -20,9 +22,13 @@ export class ContactsComponent implements OnInit {
 
   constructor(private cs:ContactService, private router:Router) { }  //private Ha: HeaderAgendaComponent
 
+  idContactoForEdit: number = 0
+
+  agendaMostrada: number = -1 //id de la agenda mostrada
+
 
   ngOnInit(): void {
-    this.getData(10) //this.agendaSeleccionada()
+    //this.getData(this.agendaMostrada) //this.agendaSeleccionada()
   }
 
 
@@ -33,12 +39,5 @@ export class ContactsComponent implements OnInit {
   async deleteContacto(contactoId : number): Promise<void>{
     await this.cs.deleteContact(contactoId);
   }
-
-  // agendaSeleccionada(){
-  //   return this.Ha.agendaSelec()
-
-  // }
-
-
 
 }

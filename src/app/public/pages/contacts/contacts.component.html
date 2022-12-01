@@ -2,17 +2,17 @@
 </app-header-agenda>
 <div id="container">
 
-  <h1>Agenda de Contactos</h1> <!-- poner codigo de agenda ******** -->
-  <div id="contacts">
+  <h1 *ngIf="agendaMostrada !== -1" >Agenda: {{agendaMostrada}}</h1> <!-- poner codigo de agenda ******** -->
+  <h1 *ngIf="agendaMostrada === -1" >Seleccione una Agenda</h1>
 
+  <div id="contacts">
       <app-contact-card
       *ngFor="let contact of contactsData"
       [contact]="contact"
       >
       </app-contact-card>
-
-
   </div>
+
 </div>
 
 

@@ -1,10 +1,11 @@
 <div class="container">
   <div class="agendas">
     <button class="boton" *ngFor="let agenda of agendas"
-      (click)="agendaSeleccionada = agenda.id" (click)="agendaSelec()">{{agenda.nombre}} {{agenda.id}}</button>
+      (click)="agendaSelec(agenda.id)" >{{agenda.nombre}} {{agenda.id}}
+    </button>
   </div>
   <div class="addagenda">
-    <input  #identificador type="text" autocomplete="off" />
-    <button  type="button" (click)="addAgenda(identificador.value)"> Agregar</button>
+    <input  #ingreso type="text" autocomplete="off" />
+    <button  type="button" (click)="addAgenda(ingreso.value)"> Agregar</button>
   </div>
 </div>

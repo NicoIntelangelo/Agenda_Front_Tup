@@ -4,6 +4,8 @@ import { ContactService } from 'src/app/services/contact.service.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ContactCardComponent } from '../../components/contact-card/contact-card.component';
+import { ContactsComponent } from '../contacts/contacts.component';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-new-contact',
@@ -35,13 +37,12 @@ export class NewContactComponent implements OnInit {
   };
 
 
-
   constructor(private cs : ContactService, private router:Router) { }  //private Cc: ContactCardComponent
 
 
   ngOnInit(): void {
     this.contactForEditData(17)//esta fun carga los datos del usuario a editar
-    this.edit_new = true
+    //this.edit_new = true /// para q por default se añadir un contacto
   }
 
 
@@ -62,12 +63,12 @@ export class NewContactComponent implements OnInit {
     return await contacto
 }
 
-  async editcontact(form:NgForm){ /***************** */
+  async editcontact(id:number, form:NgForm){ /***************** */
     console.log(form.value);
-    const id = 17//this.Cc.idEdicion//id del contacto a editar
+    //const id = 17//this.Cc.idEdicion//id del contacto a editar
 
     const contactEdit:ContactJsonPlaceholder = {
-      id: id,
+      id: this.contactForeditData.id,
       nombre: this.contactForeditData.nombre,
       apellido: this.contactForeditData.apellido,
       mail: this.contactForeditData.mail,
@@ -77,20 +78,17 @@ export class NewContactComponent implements OnInit {
       };
 
       const contactoeditado = this.cs.editContact(id, contactEdit);
-      if(contactoeditado == null){
-        console.log("error")
-      }
-      else{
-        console.log("el contacto '",(await contactoeditado).nombre,"' id:",(await contactoeditado).id, "fue editado correctamente");
-       this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
-      }
+
+      console.log("el contacto '",(await contactoeditado).nombre,"' id:",(await contactoeditado).id, "fue editado correctamente");
+      this.router.navigate(['/contacts']); //cuando iniciamos secion nos lleva a contactos if(await contactocreado)
+
     }
 
 
   async contactForEditData(id: number){
     const contactForEditData = this.getContacto(id)//tiene q recibir el id a editar
 
-    this.contactForeditData.id = 1;
+    this.contactForeditData.id = (await contactForEditData).id;
     this.contactForeditData.nombre = (await contactForEditData).nombre,
     this.contactForeditData.apellido = (await contactForEditData).apellido,
     this.contactForeditData.mail = (await contactForEditData).mail,
@@ -99,5 +97,8 @@ export class NewContactComponent implements OnInit {
     this.contactForeditData.agendaId = (await contactForEditData).agendaId
   }
 
-
+  // editContactFull(id:number, form:NgForm){
+  //   this.contactForEditData(this.idContactoForEdit)
+  //   this.editcontact(id, form)
+  // }
 }

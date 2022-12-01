@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactJsonPlaceholder } from 'src/app/interfaces/contact.interface';
 import { ContactsComponent } from '../../pages/contacts/contacts.component';
+import { NewContactComponent } from '../../pages/new-contact/new-contact.component';
 //import { Contact, defaultContact, Eric, Catherine } from 'src/app/interfaces/contactData';
 
 @Component({
@@ -11,11 +12,9 @@ import { ContactsComponent } from '../../pages/contacts/contacts.component';
 })
 export class ContactCardComponent implements OnInit {
 
-  constructor(private cs:ContactsComponent, private router:Router) { }
+  constructor(private cc:ContactsComponent, private router:Router) { }
 
-  //idEdicion: number = 0 //envia el id del contacto a editar
 
-  @Output() idEdicion = new EventEmitter<number>();
 
   @Input() contact:ContactJsonPlaceholder = {
     id: 0,
@@ -33,13 +32,13 @@ export class ContactCardComponent implements OnInit {
 
   deleteContacto(id:number){
     console.log("contacto id: ",id," eliminado")
-    this.cs.deleteContacto(id)
-    window.location.reload();//recarga la pagina automaticamente
+    this.cc.deleteContacto(id)
+    //window.location.reload();//recarga la pagina automaticamente
   }
 
   editContacto(id:number){
     console.log("contacto id: ",id," edit")
-    this.idEdicion.emit(id);
+    this.cc.idContactoForEdit = id
     this.router.navigate(['/new-contact']);
   }
 
