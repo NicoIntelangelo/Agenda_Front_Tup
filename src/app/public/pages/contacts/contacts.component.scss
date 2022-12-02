@@ -22,3 +22,9 @@ h1{
 #contacts{
   text-align: center;
 }
+
+@media (max-width:700px ) {
+  h1{
+    font-size: 24px;
+  }
+}

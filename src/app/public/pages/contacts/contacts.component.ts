@@ -41,4 +41,9 @@ export class ContactsComponent implements OnInit {
     await this.cs.deleteContact(contactoId);
   }
 
+  reload(){
+    this.getData(this.agendaMostrada)
+  }
+
+
 }

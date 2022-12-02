@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
 import { AgendaJsonPlaceholder } from 'src/app/interfaces/agenda.interface';
 import { AgendaService } from 'src/app/services/agenda.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -14,9 +15,8 @@ export class HeaderAgendaComponent implements OnInit {
 
   agendas:AgendaJsonPlaceholder[] = [];//lista con la cual itera el ngfor en el html
 
-  //addAgendaId: number = 0;
 
-  constructor(private as:AgendaService, private auth:AuthService, private Cc:ContactsComponent) { }
+  constructor(private as:AgendaService, private auth:AuthService, private Cc:ContactsComponent,private router:Router) { }
 
   @Input() agenda:AgendaJsonPlaceholder = {
     id: 0,
@@ -30,15 +30,8 @@ export class HeaderAgendaComponent implements OnInit {
 
 
   async getDataAgendas(){
-    const  userId = localStorage.getItem("Id") || 'invalid'; //toma el Id desde el local storage
-    if (userId !== 'invalid'){
-      this.agendas = await this.as.getAgendas(userId); //trae todas las agendas del usuario
-    }
-    else{
-      console.log("error getDataAgendas AgendaComponent")
-    }
+    this.agendas = await this.as.getAgendas(); //trae todas las agendas del usuario
   }
-
 
   addAgenda(agendaid:string){ //toma el valor del input(html)
     const  agendaId = this.as.addAgenda(agendaid) // agrega la agenda con ese id
@@ -53,7 +46,7 @@ export class HeaderAgendaComponent implements OnInit {
   }
 
   crearAgenda(){
-    this.Cc.abrirContactEdit = 2
+    this.Cc.abrirContactEdit = 2 //hace q se cierren las contact-card y se abra el crear agenda
   }
 
   deleteAgenda(agendaid:string){ //toma el valor del input(html)
@@ -62,5 +55,8 @@ export class HeaderAgendaComponent implements OnInit {
     window.location.reload();//recarga la pagina automaticamente
   }
 
-
+  // reload(){
+  //   this.Cc.reload()
+  // }
+  //this.router.navigate(['/contacts'])
 }

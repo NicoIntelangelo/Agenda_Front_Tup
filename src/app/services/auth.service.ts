@@ -36,7 +36,7 @@ export class AuthService {
 
   async addUser(user: iRegisterRequest) {  //: Promise<ContactJsonPlaceholder>
     console.log(user);
-    const res = await fetch(BACKEND_URL+'/api/authentication/newuser', {
+    const res = await fetch(BACKEND_URL+'/api/authentication', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
