@@ -85,9 +85,12 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   background-color: $color-2;
 }
 
+#agregar:hover{
+  background-color: rgb(16, 145, 16);
+}
+
 #eliminar:hover{
-  color: red;
-  background-color: $color-1;
+  background-color: rgb(255, 0, 0) ;
 }
 
 

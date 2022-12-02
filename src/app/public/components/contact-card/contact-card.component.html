@@ -3,13 +3,13 @@
   <div class="card-dialog">
       <img class="profile-picture" src="../../../../assets/img/Icon-Contact.jpg">
       <h3 class="p1">{{contact.nombre}} {{contact.apellido}}</h3>
-      <p class="p2"><strong>Direccion:</strong> {{contact.direccion}}</p>
-      <p class="p3" ><strong>Telefono:</strong> {{contact.telefono}}</p>
-      <p class="p4"><strong>Email:</strong> {{contact.mail}}</p>
-      <!-- <p class="p5"><strong>Descripcion:</strong> {{contact.agendaId}} </p> -->
+      <p class="p2"><strong>Telefono:</strong> {{contact.telefono}}</p>
+      <p class="p3" ><strong>Email:</strong> {{contact.mail}}</p>
+      <p class="p4"><strong>Direccion:</strong> {{contact.direccion}}</p>
+
       <button class="p6" (dblclick)="deleteContacto(contact.id)">Borrar</button>
       <button class="p7" (click)="editContacto(contact.id)">Editar</button>
-      <!-- <div class="botones">
-      </div> -->
+      <a class="p5" href="https://wa.me/{{contact.telefono}}" target="_blank"><img id="wpp" src="./../../../../assets/img/whatsapp-logo-png-hd-2.png"></a>
+
       </div>
 </div>
