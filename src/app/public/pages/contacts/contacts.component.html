@@ -3,7 +3,8 @@
 <div id="container">
 
   <h1 *ngIf="agendaMostrada !== -1 && abrirContactEdit === 0 "  >Agenda: {{agendaMostrada}}</h1>
-  <h1 *ngIf="agendaMostrada === -1 && abrirContactEdit === 0" >Seleccione una Agenda</h1>
+  <h1 *ngIf="agendaMostrada === -1 && abrirContactEdit === 0" >Seleccione una Agenda </h1>
+  <button class="p7" *ngIf="agendaMostrada !== -1 && abrirContactEdit === 0 " (click)="editAgenda()"  ><img id="icon" src="./../../../../assets/img/edit_black.png"></button>
 
   <div id="contacts" *ngIf="abrirContactEdit === 0">
       <app-contact-card
@@ -13,8 +14,8 @@
       </app-contact-card>
   </div>
 
-  <app-edit-contact *ngIf="abrirContactEdit === 1"></app-edit-contact>
-  <app-agenda *ngIf="abrirContactEdit === 2"></app-agenda>
+  <app-edit-contact id="editcontact" *ngIf="abrirContactEdit === 1"></app-edit-contact>
+  <app-agenda id="agenda" *ngIf="abrirContactEdit === 2"></app-agenda>
 
 </div>
 

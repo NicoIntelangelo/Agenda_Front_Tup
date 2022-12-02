@@ -3,6 +3,7 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactJsonPlaceholder } from 'src/app/interfaces/contact.interface';
 import { ContactService } from 'src/app/services/contact.service.service';
+import { AgendaComponent } from '../../components/agenda/agenda.component';
 import { HeaderAgendaComponent } from '../../components/header-agenda/header-agenda.component';
 import { NewContactComponent } from '../new-contact/new-contact.component';
 
@@ -26,6 +27,8 @@ export class ContactsComponent implements OnInit {
 
   abrirContactEdit: number = 0 //0 contact card,1 editar contacto, 2 crear agenda
 
+  editarAgenda: boolean= false
+
   agendaMostrada: number = -1 //id de la agenda mostrada, si es -1 muestra el titulo "seleccionar agenda"
 
 
@@ -43,6 +46,11 @@ export class ContactsComponent implements OnInit {
 
   reload(){
     this.getData(this.agendaMostrada)
+  }
+
+  editAgenda(){ //metodo llamado desde un boton en el html
+    this.abrirContactEdit = 2 //abre el componente de agenda y cierra las contact card
+    this.editarAgenda = true //hace que el html de el componente agenda cambie de crear agenda a editar agenda
   }
 
 

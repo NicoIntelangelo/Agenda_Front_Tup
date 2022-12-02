@@ -22,7 +22,10 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   float: left;
   width: 300px;
   vertical-align: top;
-  background-color: $color-blanco;
+  background: rgba(255,255,255,0.75);
+  -webkit-backdrop-filter: blur(21px);
+  backdrop-filter: blur(21px);
+  border: 1px solid rgba(255,255,255,0.375);
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
   margin: 10px;
   padding: 10px 20px 10px 20px;
@@ -103,6 +106,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 button{
   display: inline;
   border: none;
+  background: none;
 }
 
 #icon{
