@@ -98,6 +98,12 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   background-color: rgb(66, 66, 66) ;
 }
 
-
+p{
+  color: $color-blanco;
+  font-family: $tipografia-1;
+  font-weight: lighter;
+  font-size: 13px;
+  margin-left: 10px;
+}
 
 

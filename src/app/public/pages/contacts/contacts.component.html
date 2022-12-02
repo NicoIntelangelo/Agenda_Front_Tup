@@ -2,8 +2,8 @@
 </app-header-agenda>
 <div id="container">
 
-  <h1 *ngIf="agendaMostrada !== -1" >Agenda: {{agendaMostrada}}</h1> <!-- poner codigo de agenda ******** -->
-  <h1 *ngIf="agendaMostrada === -1" >Seleccione una Agenda</h1>
+  <h1 *ngIf="agendaMostrada !== -1 && abrirContactEdit === 0 "  >Agenda: {{agendaMostrada}}</h1>
+  <h1 *ngIf="agendaMostrada === -1 && abrirContactEdit === 0" >Seleccione una Agenda</h1>
 
   <div id="contacts" *ngIf="abrirContactEdit === 0">
       <app-contact-card
