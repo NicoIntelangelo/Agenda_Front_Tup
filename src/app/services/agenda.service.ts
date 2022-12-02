@@ -48,6 +48,18 @@ export class AgendaService {
     return await data.text();
   }
 
+  async editAgenda(agendaid: string, agenda: AgendaJsonPlaceholder): Promise<AgendaJsonPlaceholder> {
+    const data = await fetch(BACKEND_URL+'/api/Agenda/edit/'+ agendaid,{
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+      },
+      body: JSON.stringify(agenda)
+    });
+    return await data.json();
+  }
+
   async createAgenda(agenda: AgendaJsonPlaceholder) : Promise<number>{ //: Promise<ContactJsonPlaceholder>
     console.log(agenda);
     const res = await fetch(BACKEND_URL+'/api/Agenda', {

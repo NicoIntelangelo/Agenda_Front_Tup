@@ -47,6 +47,7 @@ export class HeaderAgendaComponent implements OnInit {
 
   crearAgenda(){
     this.Cc.abrirContactEdit = 2 //hace q se cierren las contact-card y se abra el crear agenda
+    this.Cc.editarAgenda = false //hace q el html de el agenda component este en modo crear agenda y no editar ageenda
   }
 
   deleteAgenda(agendaid:string){ //toma el valor del input(html)
@@ -55,8 +56,4 @@ export class HeaderAgendaComponent implements OnInit {
     window.location.reload();//recarga la pagina automaticamente
   }
 
-  // reload(){
-  //   this.Cc.reload()
-  // }
-  //this.router.navigate(['/contacts'])
 }

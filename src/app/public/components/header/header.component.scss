@@ -11,7 +11,7 @@ header{
 
 header .logo{
   margin: 0;
-  padding: 25px 20px;
+  padding: 20px 20px;
   font-weight: bold;
   color: $color-1;
   font-size: 2em;
@@ -51,7 +51,7 @@ header a:hover{
 
 header #singout{
   position:absolute;
-  right: 30px;
+  right: 10px;
   border: none;
 
 }
@@ -65,3 +65,12 @@ header #icon-singout:hover{
 }
 
 
+@media (max-width:700px ) {
+  header .logo{
+    padding: 20px 5px;
+    font-size: 1.8em;
+  }
+  header a{
+    padding: 5px 6px;
+  }
+}
