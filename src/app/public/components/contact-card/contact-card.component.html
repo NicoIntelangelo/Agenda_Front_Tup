@@ -7,9 +7,9 @@
       <p class="p3" ><strong>Email:</strong> {{contact.mail}}</p>
       <p class="p4"><strong>Direccion:</strong> {{contact.direccion}}</p>
 
-      <button class="p6" (dblclick)="deleteContacto(contact.id)">Borrar</button>
-      <button class="p7" (click)="editContacto(contact.id)">Editar</button>
-      <a class="p5" href="https://wa.me/{{contact.telefono}}" target="_blank"><img id="wpp" src="./../../../../assets/img/whatsapp-logo-png-hd-2.png"></a>
+      <button class="p6" (dblclick)="deleteContacto(contact.id)"><img id="icon" src="./../../../../assets/img/trash_black.png"></button>
+      <button class="p7" (click)="editContacto(contact.id)"><img id="icon" src="./../../../../assets/img/edit_black.png"></button>
+      <a class="p5" href="https://wa.me/{{contact.telefono}}" target="_blank"><img id="wpp" src="./../../../../assets/img/wpp_celeste.png"></a>
 
       </div>
 </div>

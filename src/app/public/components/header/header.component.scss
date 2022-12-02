@@ -48,20 +48,20 @@ header a:hover{
   color:  $color-1;
 }
 
+
 header #singout{
-  padding: 5px 12px;
-  text-decoration: none;
-  font-weight:lighter;
-  color: black;
-  font-family: $tipografia-1;
-  font-size: 1.1em;
   position:absolute;
   right: 30px;
   border: none;
-  background-color: $color-blanco;
 
 }
 
-header #singout:hover{
-  color:  red;
+header #icon-singout {
+  width: 35px;
 }
+
+header #icon-singout:hover{
+  filter: invert(12%) sepia(78%) saturate(7485%) hue-rotate(6deg) brightness(94%) contrast(113%);
+}
+
+
