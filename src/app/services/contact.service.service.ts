@@ -11,7 +11,7 @@ export class ContactService {
 
 
   async getContactDetails(id: number): Promise<ContactJsonPlaceholder> {
-    const data = await fetch(BACKEND_URL+'/api/Contacto/getContact/'+ id,{
+    const data = await fetch(BACKEND_URL+'/api/Contacto/'+ id,{
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -22,7 +22,7 @@ export class ContactService {
   }
 
   async getContacts(agendaId: number): Promise<ContactJsonPlaceholder[]> {
-    const data = await fetch(BACKEND_URL+'/api/Contacto/agendaContacts/'+ agendaId,{
+    const data = await fetch(BACKEND_URL+'/api/Contacto/agenda/'+ agendaId,{
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -34,7 +34,7 @@ export class ContactService {
 
   async editContact(id:number ,contact: ContactJsonPlaceholder) {
     console.log('Enviando edit de usuario a la api');
-    const res = await fetch(BACKEND_URL+'/api/Contacto/editContact/' + id, {
+    const res = await fetch(BACKEND_URL+'/api/Contacto/' + id, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
@@ -47,7 +47,7 @@ export class ContactService {
 
   async addContact(contact: ContactJsonPlaceholder) : Promise<ContactJsonPlaceholder>{ //: Promise<ContactJsonPlaceholder>
     console.log(contact);
-    const res = await fetch(BACKEND_URL+'/api/Contacto/newContact', {
+    const res = await fetch(BACKEND_URL+'/api/Contacto', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -62,7 +62,7 @@ export class ContactService {
 
 
   async deleteContact(id:number):Promise<boolean>{
-    const res = await fetch(BACKEND_URL+'/api/Contacto/deleteContact/'+id, {
+    const res = await fetch(BACKEND_URL+'/api/Contacto/'+id, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',

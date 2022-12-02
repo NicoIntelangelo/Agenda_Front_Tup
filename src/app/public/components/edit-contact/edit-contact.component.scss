@@ -15,7 +15,10 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 }
 
 #fondo-ingresos{
-  background-color: rgb(239, 240, 234,0.6);
+  background: rgba(255,255,255,0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.275);
   padding: 25px;
   padding-top: 0px;
   margin-top: 70px;
@@ -62,7 +65,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 
 
 .container input::placeholder{
-  color: white;
+  color: $color-1;
   font-size: 17px;
   font-family: $tipografia-1;
   padding:30px;

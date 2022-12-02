@@ -74,6 +74,9 @@ export class EditContactComponent implements OnInit {
     //this.contactForEditData(this.idContactoForEdit)
     this.editcontact(id, form)
     this.cc.abrirContactEdit = 0 //cambia abrirContactEdit del contact componet a 0 para que se cierre el form y se abran las contact card
-    //window.location.reload();
+    setTimeout(()=>{
+      this.cc.reload();
+    },50);//recarga la ultima agenda, con un retraso de 50mls para asegurarnos q los metodos anteriores hayan terminado
+
   }
 }

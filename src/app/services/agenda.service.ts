@@ -15,8 +15,19 @@ export class AgendaService {
   //   return await data.json();
   // }
 
-  async getAgendas(userId: string): Promise<AgendaJsonPlaceholder[]> {
-    const data = await fetch(BACKEND_URL+'/api/Agenda/getAgendas/'+ userId,{
+  // async getAgendas(userId: string): Promise<AgendaJsonPlaceholder[]> {
+  //   const data = await fetch(BACKEND_URL+'/api/Agenda/getAgendas/'+ userId,{
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-type': 'application/json',
+  //       'Authorization' :  `Bearer ${this.auth.getSession().token!}`
+  //     },
+  //   });
+  //   return await data.json();
+  // }
+
+    async getAgendas(): Promise<AgendaJsonPlaceholder[]> {
+    const data = await fetch(BACKEND_URL+'/api/Agenda',{
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
@@ -27,8 +38,8 @@ export class AgendaService {
   }
 
   async addAgenda(agendaid: string) {
-    const data = await fetch(BACKEND_URL+'/api/Agenda/addAgendaUser/'+ agendaid,{
-      method: 'POST',
+    const data = await fetch(BACKEND_URL+'/api/Agenda/'+ agendaid,{
+      method: 'PUT',
       headers: {
         'Content-type': 'application/json',
         'Authorization' :  `Bearer ${this.auth.getSession().token!}`
@@ -39,7 +50,7 @@ export class AgendaService {
 
   async createAgenda(agenda: AgendaJsonPlaceholder) : Promise<number>{ //: Promise<ContactJsonPlaceholder>
     console.log(agenda);
-    const res = await fetch(BACKEND_URL+'/api/Agenda/newagenda', {
+    const res = await fetch(BACKEND_URL+'/api/Agenda', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -52,7 +63,7 @@ export class AgendaService {
   }
 
   async deleteAgenda(agendaid: string) {
-    const data = await fetch(BACKEND_URL+'/api/Agenda/deleteAgenda/'+ agendaid,{
+    const data = await fetch(BACKEND_URL+'/api/Agenda/'+ agendaid,{
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',

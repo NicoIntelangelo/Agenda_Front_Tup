@@ -4,9 +4,11 @@ $color-2: rgb(63, 129, 167); //rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 #container{
-    background-color: $color-2;
-    min-height: 100vh;
-    height: 100%;
+  background: #3f81a7;
+  background: -webkit-linear-gradient(0deg, #3f81a7 0%, #68a6c9 100%);
+  background: linear-gradient(0deg, #3f81a7 0%, #68a6c9 100%);
+  min-height: 100vh;
+  height: 100%;
 }
 
 h1{
@@ -21,4 +23,10 @@ h1{
 
 #contacts{
   text-align: center;
+}
+
+@media (max-width:700px ) {
+  h1{
+    font-size: 24px;
+  }
 }

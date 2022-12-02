@@ -1,13 +1,29 @@
 <div class="container">
-  <div class="agendas">
-    <button class="boton" *ngFor="let agenda of agendas"
+
+  <div class="Grande">
+    <div class="agendas">
+      <button class="agenda-boton" *ngFor="let agenda of agendas"
       (click)="agendaSelec(agenda.id)" >{{agenda.nombre}}-{{agenda.id}}
-    </button>
+      </button>
+    </div>
   </div>
-  <div class="addagenda">
-    <button  type="button" (click)="crearAgenda()"> Crear</button>
-    <input  #ingreso type="text" autocomplete="off" />
-    <button id="agregar" type="button" (click)="addAgenda(ingreso.value)"> Agregar</button>
-    <button id="eliminar" type="button" (dblclick)="deleteAgenda(ingreso.value)">Eliminar</button>
+
+  <div class="Pequeño">
+    <div class="agendas">
+      <button class="agenda-boton" *ngFor="let agenda of agendas"
+      (click)="agendaSelec(agenda.id)" >{{agenda.id}}
+      </button>
+    </div>
   </div>
+
+
+    <div class="add-delete">
+      <button  id="new" type="button" (click)="crearAgenda()"><img id="icon-new" src="./../../../../assets/img/create_black.png"></button>
+      <button id="agregar" type="button" (click)="addAgenda(ingreso.value)"><img id="icon-agregar" src="./../../../../assets/img/add_black.png"></button>
+      <button id="eliminar" type="button" (dblclick)="deleteAgenda(ingreso.value)"><img id="icon-eliminar" src="./../../../../assets/img/trash_black.png"></button>
+      <input  #ingreso type="text"  placeholder="ID" autocomplete="off" />
+    </div>
+
+
+
 </div>

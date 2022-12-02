@@ -51,7 +51,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   grid-row: 4;
 }
 .p6{
-  margin-top: 20px;
+  margin-top: 10px;
   grid-column: 1;
   grid-row: 2;
 }
@@ -102,31 +102,27 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 
 button{
   display: inline;
-  font-family: $tipografia-1;
-  font-size: 20px;
-  font-weight: bold;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: $color-blanco;
-  background-color: $color-1;
+  border: none;
+}
+
+#icon{
+  width: 40px;
+}
+
+.p7 img:hover{
+  filter: invert(58%) sepia(44%) saturate(762%) hue-rotate(344deg) brightness(97%) contrast(90%);
 }
 
 
-.p7:hover{
-  background-color: $color-2 ;
-}
-
-
-.p6:hover{
-  background-color: red ;
+.p6 img:hover{
+  filter: invert(12%) sepia(78%) saturate(7485%) hue-rotate(6deg) brightness(94%) contrast(113%);
 }
 
 #wpp:hover{
-  height: 40px;
-  filter: none;
+  filter: invert(48%) sepia(82%) saturate(422%) hue-rotate(84deg) brightness(94%) contrast(89%);
 }
 
 #wpp{
-  height: 35px;
-  filter: hue-rotate(102deg) saturate(53%) brightness(115%);
+  width: 50px;
+
 }
