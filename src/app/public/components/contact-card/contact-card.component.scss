@@ -47,8 +47,8 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   grid-row: 4;
 }
 .p5{
-  grid-column: 2;
-  grid-row: 5;
+  grid-column: 1;
+  grid-row: 4;
 }
 .p6{
   margin-top: 20px;
@@ -97,7 +97,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 
 .card-dialog:active {
   box-shadow: 0 8px 17px 0 rgba(108,153,138, 0.664);
-  transition-delay: 0s;
+  transition-delay: 0.5s;
 }
 
 button{
@@ -118,5 +118,15 @@ button{
 
 
 .p6:hover{
-  color: red ;
+  background-color: red ;
+}
+
+#wpp:hover{
+  height: 40px;
+  filter: none;
+}
+
+#wpp{
+  height: 35px;
+  filter: hue-rotate(102deg) saturate(53%) brightness(115%);
 }

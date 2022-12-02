@@ -7,7 +7,7 @@
   <div class="addagenda">
     <button  type="button" (click)="crearAgenda()"> Crear</button>
     <input  #ingreso type="text" autocomplete="off" />
-    <button  type="button" (click)="addAgenda(ingreso.value)"> Agregar</button>
+    <button id="agregar" type="button" (click)="addAgenda(ingreso.value)"> Agregar</button>
     <button id="eliminar" type="button" (dblclick)="deleteAgenda(ingreso.value)">Eliminar</button>
   </div>
 </div>
