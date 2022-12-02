@@ -5,6 +5,6 @@
       <a [routerLink]="['/new-contact']" *ngIf="isLogg() === true" >Nuevo Contacto</a>
       <a [routerLink]="['/contacts']" *ngIf="isLogg() === true" >Contactos</a>
     </nav>
-    <button id="singout" *ngIf="isLogg() === true" (dblclick)="logOut()">SingOut</button>
+    <button id="singout" *ngIf="isLogg() === true" (dblclick)="logOut()">Salir</button>
   </div>
 </header>

@@ -1,22 +1,28 @@
-<section id="title">
-  <h1>Nueva Agenda</h1>
-</section>
+<div class="fondo">
+  <div id="fondo-ingresos">
 
-<section id="ingresos">
-  <div class="container">
+    <section id="title">
+      <h1>Nueva Agenda</h1>
+    </section>
 
-    <form (ngSubmit)="newagenda(form)" #form="ngForm">
+    <section id="ingresos">
+      <div class="container">
 
-      <div class="inputs">
-        <label for="nombre">Nombre</label>
-        <input type="nombre" name="nombre" id="nombre" autocomplete="name" placeholder="Ingrese el nombre"
-        [(ngModel)]="agendaData.nombre" #nombre="ngModel" [maxlength]="10">
+        <form (ngSubmit)="newagenda(form)" #form="ngForm">
+
+          <div class="inputs">
+            <label for="nombre">Nombre</label>
+            <input type="nombre" name="nombre" id="nombre" placeholder="Ingrese el nombre"
+            [(ngModel)]="agendaData.nombre" #nombre="ngModel" [maxlength]="10">
+          </div>
+
+          <div>
+            <button type="submit" >Cargar</button>
+            <!-- <button type="submit" >Cargar</button> -->
+          </div>
+        </form>
       </div>
+    </section>
 
-      <div>
-        <button type="submit" >Cargar</button>
-        <!-- <button type="submit" >Cargar</button> -->
-      </div>
-    </form>
   </div>
-</section>
+</div>

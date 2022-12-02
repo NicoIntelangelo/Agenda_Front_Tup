@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private auth:AuthService, private router:Router) { }
 
   isLogg(){
-    //this.auth.getSession()
+    this.auth.getSession()
     return this.auth.isLoggedIn()//si esta logg devuelve true sino false
   }
 

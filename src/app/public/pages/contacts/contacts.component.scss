@@ -1,10 +1,10 @@
 $color-blanco : rgb(239, 240, 234);
-$color-verde: rgb(108,153,138);
-$color-verde2: rgb(84, 117, 106);
+$color-1: rgb(104, 166, 201);// rgb(108,153,138);
+$color-2: rgb(63, 129, 167); //rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 #container{
-    background-color: $color-verde2;
+    background-color: $color-2;
     min-height: 100vh;
     height: 100%;
 }

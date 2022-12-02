@@ -1,6 +1,6 @@
 $color-blanco : rgb(239, 240, 234);
-$color-verde: rgb(108,153,138);
-$color-verde2: rgb(84, 117, 106);
+$color-1: rgb(104, 166, 201);// rgb(108,153,138);
+$color-2: rgb(63, 129, 167); //rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 
@@ -20,7 +20,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 
 
   float: left;
-  width: 320px;
+  width: 300px;
   vertical-align: top;
   background-color: $color-blanco;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24);
@@ -72,7 +72,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   height: 80px;
   width: 80px;
   margin: 20px 0 10px 0;
-  border-color: $color-verde;
+  border-color: $color-1;
 }
 .profile-picture img{
   position: center;
@@ -106,14 +106,14 @@ button{
   font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: $color-blanco;
-  background-color: $color-verde;
+  background-color: $color-1;
 }
 
 
 .p7:hover{
-  background-color: $color-verde2 ;
+  background-color: $color-2 ;
 }
 
 

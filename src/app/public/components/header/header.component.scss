@@ -1,5 +1,7 @@
 $color-blanco : rgb(239, 240, 234);
 $color-verde: rgb(108,153,138);
+$color-1: rgb(104, 166, 201);// rgb(108,153,138);
+$color-2: rgb(63, 129, 167); //rgb(84, 117, 106);
 $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 header{
@@ -9,10 +11,14 @@ header{
 
 header .logo{
   margin: 0;
-  padding: 25px 30px;
+  padding: 25px 20px;
   font-weight: bold;
-  color: $color-verde;
+  color: $color-1;
   font-size: 2em;
+}
+
+header .logo:hover{
+  color: $color-2;
 }
 
 header .container{
@@ -26,7 +32,7 @@ header nav{
   display: flex;
   //flex-direction: column;
   text-align: center;
-  padding: 25px 15px;
+  padding: 25px 5px;
 }
 
 header a{
@@ -35,11 +41,11 @@ header a{
   font-weight:lighter;
   color: black;
   font-family: $tipografia-1;
-  font-size: 1.1em;
+  font-size: 15px;
 }
 
 header a:hover{
-  color:  $color-verde;
+  color:  $color-1;
 }
 
 header #singout{
