@@ -14,7 +14,7 @@ import { HomeComponent } from '../home/home.component';
 })
 export class NewContactComponent implements OnInit {
 
-  edit_new:boolean = true //true/false //para cambiar entre edicion y creacion de contacto
+  //edit_new:boolean = true //true/false //para cambiar entre edicion y creacion de contacto
 
   contactData:ContactJsonPlaceholder = {
     id: 1,
