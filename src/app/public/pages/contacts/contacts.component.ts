@@ -53,5 +53,8 @@ export class ContactsComponent implements OnInit {
     this.editarAgenda = true //hace que el html de el componente agenda cambie de crear agenda a editar agenda
   }
 
+  agregarcontacto(){
+    this.router.navigate(['/new-contact'])
+  }
 
 }
