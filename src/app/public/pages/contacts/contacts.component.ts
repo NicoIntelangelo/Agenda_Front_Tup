@@ -2,6 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactJsonPlaceholder } from 'src/app/interfaces/contact.interface';
+import { AgendaService } from 'src/app/services/agenda.service';
 import { ContactService } from 'src/app/services/contact.service.service';
 import { AgendaComponent } from '../../components/agenda/agenda.component';
 import { HeaderAgendaComponent } from '../../components/header-agenda/header-agenda.component';
@@ -21,7 +22,7 @@ export class ContactsComponent implements OnInit {
 
   contactsData:ContactJsonPlaceholder[] = [];//lista con la cual itera el ngfor en el html
 
-  constructor(private cs:ContactService, private router:Router) { }  //private Ha: HeaderAgendaComponent
+  constructor(private cs:ContactService,private as:AgendaService, private router:Router) { }  //private Ha: HeaderAgendaComponent
 
   idContactoForEdit: number = 0 //este dato llega desde la contact card y es utilizado por el edit contact component
 
@@ -31,6 +32,7 @@ export class ContactsComponent implements OnInit {
 
   agendaMostrada: number = -1 //id de la agenda mostrada, si es -1 muestra el titulo "seleccionar agenda"
 
+  agendaMostradaNombre: string = ""
 
   ngOnInit(): void {
   }
@@ -55,6 +57,12 @@ export class ContactsComponent implements OnInit {
 
   agregarcontacto(){
     this.router.navigate(['/new-contact'])
+  }
+
+  deleteAgenda(){ //toma el valor del input(html)
+    const  agendaId = this.as.deleteAgenda(this.agendaMostrada.toString()) // agrega la agenda con ese id
+    console.log("agenda:",agendaId,"eliminada")
+    window.location.reload();//recarga la pagina automaticamente
   }
 
 }
