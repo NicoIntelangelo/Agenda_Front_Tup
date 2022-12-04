@@ -39,8 +39,9 @@ export class HeaderAgendaComponent implements OnInit {
     console.log(agendaId)
   }
 
-  agendaSelec(agendaId: number){
+  agendaSelec(agendaId: number, agendaNom: string){
     this.Cc.agendaMostrada = agendaId //cambia el valor de la variable agendaMostrada en el contact.component(la utiliza para mostrar el codigo de la agenda en el titulo)
+    this.Cc.agendaMostradaNombre = agendaNom //guarda el nombre de la agenda
     this.Cc.abrirContactEdit = 0 //para q el html muestre las contact card
     this.Cc.getData(agendaId) //ejecuta el metodo getdata() del contact component el cual trae todos los contactos de una agenda
   }
@@ -50,10 +51,10 @@ export class HeaderAgendaComponent implements OnInit {
     this.Cc.editarAgenda = false //hace q el html de el agenda component este en modo crear agenda y no editar ageenda
   }
 
-  deleteAgenda(agendaid:string){ //toma el valor del input(html)
-    const  agendaId = this.as.deleteAgenda(agendaid) // agrega la agenda con ese id
-    console.log("agenda:",agendaId,"eliminada")
-    window.location.reload();//recarga la pagina automaticamente
-  }
+  // deleteAgenda(agendaid:string){ //toma el valor del input(html)
+  //   const  agendaId = this.as.deleteAgenda(agendaid) // agrega la agenda con ese id
+  //   console.log("agenda:",agendaId,"eliminada")
+  //   window.location.reload();//recarga la pagina automaticamente
+  // }
 
 }

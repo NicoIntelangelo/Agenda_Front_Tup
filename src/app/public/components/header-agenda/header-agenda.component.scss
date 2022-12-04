@@ -51,7 +51,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   position:absolute;
   right: 10px;
   display: grid;
-  grid-template-columns:  20% 10% 20% 20% 30%;
+  grid-template-columns:  40px 20px 40px 40px;
   grid-template-rows:  100%;
 }
 
@@ -65,7 +65,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   background-color:$color-blanco;
   color: $color-1;
   font-size: 15px;
-  grid-column: 5;
+  grid-column: 4;
 }
 .add-delete input::placeholder{
   color: $color-1;
@@ -77,11 +77,12 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
 .add-delete #agregar {
   padding: 0 0;
   grid-column: 3;
+  grid-row: 1;
 }
-.add-delete #eliminar{
-  padding: 0 0;
-  grid-column: 4;
-}
+// .add-delete #eliminar{
+//   padding: 0 0;
+//   grid-column: 4;
+// }
 
 
 #icon-agregar:hover{
@@ -91,12 +92,12 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   width: 40px;
 }
 
-#icon-eliminar:hover{
-  filter: invert(12%) sepia(78%) saturate(7485%) hue-rotate(6deg) brightness(94%) contrast(113%);
-}
-#icon-eliminar{
-  width: 40px;
-}
+// #icon-eliminar:hover{
+//   filter: invert(12%) sepia(78%) saturate(7485%) hue-rotate(6deg) brightness(94%) contrast(113%);
+// }
+// #icon-eliminar{
+//   width: 40px;
+// }
 
 #icon-new:hover{
   filter: invert(58%) sepia(44%) saturate(762%) hue-rotate(344deg) brightness(97%) contrast(90%);
