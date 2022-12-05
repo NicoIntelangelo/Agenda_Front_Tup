@@ -56,7 +56,7 @@ export class ContactsComponent implements OnInit {
   }
 
   agregarcontacto(){
-    this.router.navigate(['/new-contact'])
+    this.router.navigate(['/new-contact',this.agendaMostrada])
   }
 
   deleteAgenda(){ //toma el valor del input(html)

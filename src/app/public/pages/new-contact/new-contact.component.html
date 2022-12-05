@@ -41,12 +41,6 @@
             [(ngModel)]="contactData.direccion"   #direccion="ngModel" [maxlength]="25">
           </div>
 
-          <div class="inputs">
-            <label for="agendaId">Agenda Id</label>
-            <input type="agendaId" name="agendaId" id="agendaId"  placeholder="Ingrese el id de agenda"
-            [(ngModel)]="contactData.agendaId"  #agendaId="ngModel" [required]="true">
-          </div>
-
           <div>
             <button type="submit" [disabled]="form.invalid">Cargar</button>
             <!-- <button type="submit" >Cargar</button> -->

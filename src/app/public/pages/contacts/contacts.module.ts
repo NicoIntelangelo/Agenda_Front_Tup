@@ -25,7 +25,8 @@ import { AgendaComponent } from '../../components/agenda/agenda.component';
 
   ],
   exports:[
-    HeaderAgendaComponent
+    HeaderAgendaComponent,
+    ContactsComponent
   ]
 })
 export class ContactsModule { }

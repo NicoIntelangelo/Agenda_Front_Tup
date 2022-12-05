@@ -10,7 +10,7 @@ export interface Contact {
 
 
 export interface ContactJsonPlaceholder {
-  id : number,
+  id? : number,
   nombre : string,
   apellido : string,
   mail : string,
