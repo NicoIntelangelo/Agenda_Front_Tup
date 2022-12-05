@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { NewContactRoutingModule } from './new-contact-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NewContactComponent } from './new-contact.component';
+import { ContactsComponent } from '../contacts/contacts.component';
+import { ContactsModule } from '../contacts/contacts.module';
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { NewContactComponent } from './new-contact.component';
   imports: [
     CommonModule,
     NewContactRoutingModule,
-    FormsModule
+    FormsModule,
+    ContactsModule
   ],
   exports: [
   ]

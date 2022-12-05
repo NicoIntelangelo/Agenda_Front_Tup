@@ -70,7 +70,7 @@ $tipografia-1: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida S
   width: 325px;
   background-color:rgba(255, 255, 255, 0.5);
   box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
-  color: white;
+  color: $color-1;
   font-size: 20px;
   font-family: $tipografia-1;
 }

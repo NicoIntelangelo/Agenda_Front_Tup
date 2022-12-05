@@ -4,6 +4,10 @@ import { NewContactComponent } from './new-contact.component';
 
 const routes: Routes = [
   {
+    path: ":id",
+    component: NewContactComponent
+  },
+  {
     path: "",
     component: NewContactComponent
   }

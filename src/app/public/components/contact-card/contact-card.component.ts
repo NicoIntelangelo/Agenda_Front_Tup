@@ -35,7 +35,7 @@ export class ContactCardComponent implements OnInit {
     this.cc.deleteContacto(id) //ejecuta el metodo deleteContacto() del contact component
     setTimeout(()=>{
       this.cc.reload();
-    },50);//recarga la ultima agenda, con un retraso de 50mls para asegurarnos q los metodos anteriores hayan terminado
+    },100);//recarga la ultima agenda, con un retraso de 50mls para asegurarnos q los metodos anteriores hayan terminado
   }
 
   editContacto(id:number){  //metodo llamado desde el boton edit del html(recibe el id del contacto de esa agenda)
