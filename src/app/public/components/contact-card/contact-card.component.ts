@@ -33,7 +33,8 @@ export class ContactCardComponent implements OnInit {
   async deleteContacto(id:number){  //metodo llamado desde el boton borrar del html(recibe el id del contacto de esa agenda)
     console.log("contacto id: ",id," eliminado")
     await this.cc.deleteContacto(id) //ejecuta el metodo deleteContacto() del contact component
-    this.cc.reload();//recarga la ultima agenda cuando los metodos anteriores hayan terminado
+    this.cc.reload();//recarga la ultima agenda cuando los metodos anteriores hayan terminadoa
+
   }
 
   editContacto(id:number){  //metodo llamado desde el boton edit del html(recibe el id del contacto de esa agenda)
